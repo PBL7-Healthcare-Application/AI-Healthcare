@@ -11,7 +11,7 @@ import csv
 import warnings
 
 
-data = pd.read_csv('D:\Project\Chatbot\\app\Data\dataset.csv')
+data = pd.read_csv('E:\Code_Project\PBL7\AI-Healthcare\\app\model\xgboost_model.pkl')
 data.info();
 
 # print("huy")

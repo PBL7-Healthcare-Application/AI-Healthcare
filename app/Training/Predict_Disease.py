@@ -39,7 +39,15 @@ def predict_disease_from_symptom(symptom_list):
     df_test.loc[0] = np.array(list(symptoms.values()))
     
     # Load pre-trained model
-    model_path = r'D:\Project\Chatbot\app\model\xgboost_model.pkl'
+    model_path = r'E:\\Code_Project\\PBL7\AI-Healthcare\\app\\model\\xgboost_model.pkl'
     with open(model_path, 'rb') as file:
         model = pickle.load(file)
+    symptoms_dict = {symptom: index for index, symptom in enumerate(X)}
+    input_vector = np.zeros(len(symptoms_dict))
+    for item in symptom_list:
+      if item in symptoms_dict:
+        input_vector[symptoms_dict[item]] = 1
     return model.predict(df_test)
+
+
+
