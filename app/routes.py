@@ -10,6 +10,7 @@ main = Blueprint('main', __name__)
 
 @main.route('/predict', methods=['POST'])
 def predict():
+    df = pd.read_csv('E:\Code_Project\PBL7\AI-Healthcare\\app\Data\Training.csv')
     data = request.json
     features = data['symptoms']
     

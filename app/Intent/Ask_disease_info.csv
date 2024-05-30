@@ -1,0 +1,82 @@
+text,intent
+What are the symptoms of the flu?,ask_disease_info
+Can you tell me about diabetes?,ask_disease_info
+What is hypertension?,ask_disease_info
+How is COVID-19 transmitted?,ask_disease_info
+What are the causes of asthma?,ask_disease_info
+Tell me about the treatment for cancer.,ask_disease_info
+What are the risk factors for heart disease?,ask_disease_info
+How can I prevent a stroke?,ask_disease_info
+What is the difference between a cold and the flu?,ask_disease_info
+What are the signs of a heart attack?,ask_disease_info
+How is pneumonia diagnosed?,ask_disease_info
+What are the common treatments for arthritis?,ask_disease_info
+Tell me about the symptoms of tuberculosis.,ask_disease_info
+What causes migraines?,ask_disease_info
+How is Alzheimer's disease treated?,ask_disease_info
+What are the early signs of Parkinson's disease?,ask_disease_info
+Can you explain what hepatitis is?,ask_disease_info
+What are the complications of diabetes?,ask_disease_info
+How can I manage my cholesterol levels?,ask_disease_info
+What is the prognosis for lung cancer?,ask_disease_info
+How is depression diagnosed?,ask_disease_info
+What are the treatment options for epilepsy?,ask_disease_info
+Can you give me information on osteoporosis?,ask_disease_info
+What are the symptoms of a kidney infection?,ask_disease_info
+How is Lyme disease transmitted?,ask_disease_info
+What are the stages of liver disease?,ask_disease_info
+Tell me about the prevention of skin cancer.,ask_disease_info
+What are the side effects of chemotherapy?,ask_disease_info
+How can I reduce my risk of colorectal cancer?,ask_disease_info
+What are the causes of chronic bronchitis?,ask_disease_info
+How is multiple sclerosis diagnosed?,ask_disease_info
+What are the symptoms of anemia?,ask_disease_info
+Can you explain what a stroke is?,ask_disease_info
+What are the risk factors for breast cancer?,ask_disease_info
+How is HIV transmitted?,ask_disease_info
+What are the early signs of liver disease?,ask_disease_info
+What treatments are available for bipolar disorder?,ask_disease_info
+Tell me about the causes of rheumatoid arthritis.,ask_disease_info
+What are the symptoms of pancreatic cancer?,ask_disease_info
+How is leukemia treated?,ask_disease_info
+What are the risk factors for prostate cancer?,ask_disease_info
+How can I prevent osteoporosis?,ask_disease_info
+What are the signs of meningitis?,ask_disease_info
+How is schizophrenia diagnosed?,ask_disease_info
+What are the common treatments for COPD?,ask_disease_info
+Tell me about the symptoms of gallbladder disease.,ask_disease_info
+What causes endometriosis?,ask_disease_info
+How is bipolar disorder managed?,ask_disease_info
+What are the early signs of glaucoma?,ask_disease_info
+Can you explain what lymphoma is?,ask_disease_info
+What are the complications of hypertension?,ask_disease_info
+How can I reduce my risk of lung cancer?,ask_disease_info
+What are the causes of ulcers?,ask_disease_info
+How is thyroid disease diagnosed?,ask_disease_info
+What are the symptoms of dengue fever?,ask_disease_info
+Tell me about the treatment for chronic fatigue syndrome.,ask_disease_info
+What are the risk factors for melanoma?,ask_disease_info
+How is irritable bowel syndrome managed?,ask_disease_info
+What are the signs of a brain tumor?,ask_disease_info
+What causes gallstones?,ask_disease_info
+How is Crohn's disease treated?,ask_disease_info
+What are the early signs of cervical cancer?,ask_disease_info
+Can you give me information on lupus?,ask_disease_info
+What are the complications of sleep apnea?,ask_disease_info
+How can I manage my asthma?,ask_disease_info
+What is the prognosis for stomach cancer?,ask_disease_info
+How is ADHD diagnosed?,ask_disease_info
+What are the treatment options for psoriasis?,ask_disease_info
+Tell me about the symptoms of Ebola.,ask_disease_info
+What causes chronic kidney disease?,ask_disease_info
+How is dengue fever transmitted?,ask_disease_info
+What are the stages of Alzheimer's disease?,ask_disease_info
+What are the side effects of radiation therapy?,ask_disease_info
+How can I reduce my risk of heart disease?,ask_disease_info
+What are the causes of GERD?,ask_disease_info
+How is lupus diagnosed?,ask_disease_info
+What are the symptoms of a UTI?,ask_disease_info
+Can you explain what cystic fibrosis is?,ask_disease_info
+What are the risk factors for stroke?,ask_disease_info
+How is Parkinson's disease managed?,ask_disease_info
+What are the early signs of HIV?,ask_disease_info

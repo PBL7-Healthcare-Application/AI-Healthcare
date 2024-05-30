@@ -1,0 +1,83 @@
+text,intent
+What are the symptoms of the flu?,ask_symptoms
+Can you tell me the symptoms of diabetes?,ask_symptoms
+What are the symptoms of hypertension?,ask_symptoms
+How do I know if I have COVID-19?,ask_symptoms
+What are the symptoms of asthma?,ask_symptoms
+What are the signs of cancer?,ask_symptoms
+What are the symptoms of heart disease?,ask_symptoms
+How can I tell if I'm having a stroke?,ask_symptoms
+What are the differences in symptoms between a cold and the flu?,ask_symptoms
+What are the warning signs of a heart attack?,ask_symptoms
+What are the symptoms of pneumonia?,ask_symptoms
+What are common symptoms of arthritis?,ask_symptoms
+What are the symptoms of tuberculosis?,ask_symptoms
+What symptoms are associated with migraines?,ask_symptoms
+What are the symptoms of Alzheimer's disease?,ask_symptoms
+What are the early symptoms of Parkinson's disease?,ask_symptoms
+What symptoms indicate hepatitis?,ask_symptoms
+What are the complications and symptoms of diabetes?,ask_symptoms
+What are the symptoms of high cholesterol?,ask_symptoms
+What are the symptoms of lung cancer?,ask_symptoms
+What are the symptoms of depression?,ask_symptoms
+What are the symptoms of epilepsy?,ask_symptoms
+Can you give me the symptoms of osteoporosis?,ask_symptoms
+What are the symptoms of a kidney infection?,ask_symptoms
+What are the symptoms of Lyme disease?,ask_symptoms
+What are the symptoms of liver disease?,ask_symptoms
+What are the early symptoms of skin cancer?,ask_symptoms
+What are the side effects and symptoms of chemotherapy?,ask_symptoms
+What are the symptoms of colorectal cancer?,ask_symptoms
+What are the symptoms of chronic bronchitis?,ask_symptoms
+What are the symptoms of multiple sclerosis?,ask_symptoms
+What are the symptoms of anemia?,ask_symptoms
+What are the symptoms of a stroke?,ask_symptoms
+What are the symptoms of breast cancer?,ask_symptoms
+What are the early symptoms of HIV?,ask_symptoms
+What are the symptoms of liver disease?,ask_symptoms
+What are the symptoms of bipolar disorder?,ask_symptoms
+What are the causes and symptoms of rheumatoid arthritis?,ask_symptoms
+What are the symptoms of pancreatic cancer?,ask_symptoms
+What are the symptoms of leukemia?,ask_symptoms
+What are the symptoms of prostate cancer?,ask_symptoms
+What are the symptoms of osteoporosis?,ask_symptoms
+What are the symptoms of meningitis?,ask_symptoms
+What are the symptoms of schizophrenia?,ask_symptoms
+What are common symptoms of COPD?,ask_symptoms
+What are the symptoms of gallbladder disease?,ask_symptoms
+What are the symptoms of endometriosis?,ask_symptoms
+What are the symptoms of bipolar disorder?,ask_symptoms
+What are the early symptoms of glaucoma?,ask_symptoms
+What are the symptoms of lymphoma?,ask_symptoms
+What are the complications and symptoms of hypertension?,ask_symptoms
+What are the symptoms of lung cancer?,ask_symptoms
+What are the symptoms of ulcers?,ask_symptoms
+What are the symptoms of thyroid disease?,ask_symptoms
+What are the symptoms of dengue fever?,ask_symptoms
+What are the symptoms of chronic fatigue syndrome?,ask_symptoms
+What are the symptoms of melanoma?,ask_symptoms
+What are the symptoms of irritable bowel syndrome?,ask_symptoms
+What are the symptoms of a brain tumor?,ask_symptoms
+What are the symptoms of gallstones?,ask_symptoms
+What are the symptoms of Crohn's disease?,ask_symptoms
+What are the early symptoms of cervical cancer?,ask_symptoms
+Can you give me the symptoms of lupus?,ask_symptoms
+What are the complications and symptoms of sleep apnea?,ask_symptoms
+What are the symptoms of asthma?,ask_symptoms
+What are the symptoms of stomach cancer?,ask_symptoms
+What are the symptoms of ADHD?,ask_symptoms
+What are the symptoms of psoriasis?,ask_symptoms
+What are the symptoms of Ebola?,ask_symptoms
+What are the causes and symptoms of chronic kidney disease?,ask_symptoms
+What are the symptoms of dengue fever?,ask_symptoms
+What are the stages and symptoms of Alzheimer's disease?,ask_symptoms
+What are the side effects and symptoms of radiation therapy?,ask_symptoms
+What are the symptoms of heart disease?,ask_symptoms
+What are the symptoms of GERD?,ask_symptoms
+What are the symptoms of lupus?,ask_symptoms
+What are the symptoms of a UTI?,ask_symptoms
+Can you explain the symptoms of cystic fibrosis?,ask_symptoms
+What are the symptoms of a stroke?,ask_symptoms
+What are the symptoms of Parkinson's disease?,ask_symptoms
+What are the early symptoms of HIV?,ask_symptoms
+What are the symptoms of bipolar disorder?,ask_symptoms

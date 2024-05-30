@@ -1,0 +1,100 @@
+text,intent
+Hello,greeting
+Hi,greeting
+Hey,greeting
+Good morning,greeting
+Good afternoon,greeting
+Good evening,greeting
+Hi there,greeting
+Hello there,greeting
+Hey there,greeting
+Hi everyone,greeting
+Hey everyone,greeting
+Good to see you,greeting
+Nice to meet you,greeting
+How are you?,greeting
+How's it going?,greeting
+What's up?,greeting
+How have you been?,greeting
+Long time no see,greeting
+Hi friend,greeting
+Hey friend,greeting
+Hello my friend,greeting
+Hi buddy,greeting
+Hey buddy,greeting
+Hello buddy,greeting
+Good day,greeting
+Greetings,greeting
+Salutations,greeting
+Howdy,greeting
+Hiya,greeting
+What's new?,greeting
+How's everything?,greeting
+How are things?,greeting
+How's life?,greeting
+How do you do?,greeting
+"Hi there, how are you?",greeting
+"Hey there, how's it going?",greeting
+"Hello there, how have you been?",greeting
+"Hi everyone, nice to see you",greeting
+"Hey everyone, what's up?",greeting
+"Good morning, how are you?",greeting
+"Good afternoon, how's it going?",greeting
+"Good evening, how have you been?",greeting
+"Hi there, how's everything?",greeting
+"Hello there, how do you do?",greeting
+"Hi friend, how are you?",greeting
+"Hey friend, how's it going?",greeting
+"Hello friend, how have you been?",greeting
+"Hi buddy, how are things?",greeting
+"Hey buddy, what's new?",greeting
+"Hello buddy, how's everything?",greeting
+"Good day, how are you?",greeting
+"Greetings, how's it going?",greeting
+"Salutations, how have you been?",greeting
+"Howdy, how are things?",greeting
+"Hiya, how's life?",greeting
+"What's new, how do you do?",greeting
+"How's everything, how are you?",greeting
+"How are things, how's it going?",greeting
+"How's life, how have you been?",greeting
+"How do you do, how are things?",greeting
+"Hi there, how's your day?",greeting
+"Hey there, how's your week?",greeting
+"Hello there, how's your morning?",greeting
+"Hi everyone, how's your afternoon?",greeting
+"Hey everyone, how's your evening?",greeting
+"Good morning, how's your day?",greeting
+"Good afternoon, how's your week?",greeting
+"Good evening, how's your morning?",greeting
+"Hi there, how's your afternoon?",greeting
+"Hey there, how's your evening?",greeting
+"Hello there, how's your day going?",greeting
+"Hi friend, how's your week going?",greeting
+"Hey friend, how's your morning going?",greeting
+"Hello friend, how's your afternoon going?",greeting
+"Hi buddy, how's your evening going?",greeting
+"Hey buddy, how's your day going?",greeting
+"Hello buddy, how's your week going?",greeting
+"Good day, how's your morning going?",greeting
+"Greetings, how's your afternoon going?",greeting
+"Salutations, how's your evening going?",greeting
+"Howdy, how's your day going?",greeting
+"Hiya, how's your week going?",greeting
+"What's new, how's your morning going?",greeting
+"How's everything, how's your afternoon going?",greeting
+"How are things, how's your evening going?",greeting
+"How's life, how's your day going?",greeting
+"How do you do, how's your week going?",greeting
+"Hi there, how are you today?",greeting
+"Hey there, how are you this week?",greeting
+"Hello there, how are you this morning?",greeting
+"Hi everyone, how are you this afternoon?",greeting
+"Hey everyone, how are you this evening?",greeting
+"Good morning, how are you doing?",greeting
+"Good afternoon, how's everything?",greeting
+"Good evening, how have things been?",greeting
+"Hi there, what's new with you?",greeting
+"Hey there, how's your health?",greeting
+"Hello there, hope you're well",greeting
+"Hi, how can I assist you today?",greeting

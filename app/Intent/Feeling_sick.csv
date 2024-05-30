@@ -1,0 +1,113 @@
+text,intent
+I feel sick,feeling_sick
+I am sick,feeling_sick
+I am not feeling well,feeling_sick
+I do not feel well,feeling_sick
+I am not well,feeling_sick
+Feeling under the weather,feeling_sick
+I think I'm coming down with something,feeling_sick
+I'm feeling terrible,feeling_sick
+I'm feeling awful,feeling_sick
+Not feeling too good today,feeling_sick
+Feeling a bit off,feeling_sick
+I'm feeling quite ill,feeling_sick
+Feeling a little queasy,feeling_sick
+I'm feeling really sick,feeling_sick
+Feeling nauseous,feeling_sick
+I'm feeling really unwell,feeling_sick
+Feeling feverish,feeling_sick
+I'm feeling dizzy,feeling_sick
+I'm feeling weak,feeling_sick
+Feeling exhausted,feeling_sick
+I'm feeling fatigued,feeling_sick
+I'm feeling rundown,feeling_sick
+I feel like I'm coming down with something,feeling_sick
+I'm feeling feverish,feeling_sick
+I'm feeling shivery,feeling_sick
+I'm feeling chilly,feeling_sick
+Feeling hot and cold,feeling_sick
+I'm feeling achy,feeling_sick
+I'm feeling sore all over,feeling_sick
+I'm feeling congested,feeling_sick
+Feeling stuffed up,feeling_sick
+I'm feeling congested,feeling_sick
+I'm feeling nauseated,feeling_sick
+I'm feeling queasy,feeling_sick
+Feeling like I might throw up,feeling_sick
+I'm feeling light-headed,feeling_sick
+I'm feeling woozy,feeling_sick
+Feeling faint,feeling_sick
+I'm feeling nauseous,feeling_sick
+I'm feeling dizzy,feeling_sick
+I'm feeling weak,feeling_sick
+I'm feeling fatigued,feeling_sick
+Feeling tired all the time,feeling_sick
+I'm feeling run down,feeling_sick
+I'm feeling under the weather,feeling_sick
+Feeling like I might pass out,feeling_sick
+I'm feeling off,feeling_sick
+I'm feeling peaky,feeling_sick
+Feeling out of sorts,feeling_sick
+I'm feeling lousy,feeling_sick
+I'm feeling rough,feeling_sick
+I'm feeling punk,feeling_sick
+I'm feeling out of sorts,feeling_sick
+Feeling like death warmed up,feeling_sick
+I'm feeling poorly,feeling_sick
+Feeling sick as a dog,feeling_sick
+I'm feeling terrible,feeling_sick
+Feeling like I've been hit by a bus,feeling_sick
+I'm feeling drained,feeling_sick
+I'm feeling weary,feeling_sick
+I'm feeling washed out,feeling_sick
+I'm feeling shaky,feeling_sick
+Feeling shaky and weak,feeling_sick
+I'm feeling awful,feeling_sick
+Feeling like I've been run over,feeling_sick
+I'm feeling out of it,feeling_sick
+Feeling like death,feeling_sick
+I'm feeling like I'm at death's door,feeling_sick
+I'm feeling like I'm on my last legs,feeling_sick
+Feeling like I'm dying,feeling_sick
+I'm feeling sick to my stomach,feeling_sick
+Feeling like I might throw up,feeling_sick
+I'm feeling like I've got the flu,feeling_sick
+Feeling like I've been hit by a truck,feeling_sick
+I'm feeling like I'm going to pass out,feeling_sick
+Feeling like I'm going to faint,feeling_sick
+I'm feeling like I'm going to puke,feeling_sick
+Feeling like I'm going to hurl,feeling_sick
+I'm feeling like I'm going to barf,feeling_sick
+Feeling like I'm going to vomit,feeling_sick
+I'm feeling like I'm going to be sick,feeling_sick
+Feeling like I'm going to throw up,feeling_sick
+I'm feeling like I'm going to lose my lunch,feeling_sick
+Feeling like I'm going to lose my breakfast,feeling_sick
+I'm feeling like I'm going to lose my dinner,feeling_sick
+Feeling like I'm going to lose my meal,feeling_sick
+I'm feeling like I'm going to lose my supper,feeling_sick
+Feeling like I'm going to toss my cookies,feeling_sick
+I'm feeling like I'm going to toss my lunch,feeling_sick
+Feeling like I'm going to toss my dinner,feeling_sick
+I'm feeling like I'm going to toss my supper,feeling_sick
+Feeling like I'm going to blow chunks,feeling_sick
+I'm feeling like I'm going to blow lunch,feeling_sick
+Feeling like I'm going to blow dinner,feeling_sick
+I'm feeling like I'm going to blow supper,feeling_sick
+Feeling like I'm going to blow my lunch,feeling_sick
+I'm feeling like I'm going to blow my dinner,feeling_sick
+Feeling like I'm going to blow my supper,feeling_sick
+I'm feeling like I'm going to spew,feeling_sick
+Feeling like I'm going to hurl chunks,feeling_sick
+I'm feeling like I'm going to puke my guts out,feeling_sick
+Feeling like I'm going to vomit my guts out,feeling_sick
+I'm feeling like I'm going to barf my guts out,feeling_sick
+Feeling like I'm going to toss my cookies up,feeling_sick
+I'm feeling like I'm going to toss my lunch up,feeling_sick
+Feeling like I'm going to toss my dinner up,feeling_sick
+I'm feeling like I'm going to toss my supper up,feeling_sick
+Feeling like I'm going to blow chunks up,feeling_sick
+I'm feeling like I'm going to blow lunch up,feeling_sick
+Feeling like I'm going to blow dinner up,feeling_sick
+I'm feeling like I'm going to blow supper up,feeling_sick
+Feeling like I'm going to blow my lunch up,feeling_sick

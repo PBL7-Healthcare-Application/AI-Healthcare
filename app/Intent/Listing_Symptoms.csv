@@ -1,0 +1,77 @@
+text,intent
+I have a headache,listing_symptoms
+I feel dizzy and nauseous,listing_symptoms
+My stomach hurts and I have a fever,listing_symptoms
+I'm experiencing chest pain and shortness of breath,listing_symptoms
+I have a cough and runny nose,listing_symptoms
+I feel weak and fatigued,listing_symptoms
+My throat is sore and I have difficulty swallowing,listing_symptoms
+I have chills and body aches,listing_symptoms
+I'm sweating profusely and feeling cold,listing_symptoms
+I have diarrhea and stomach cramps,listing_symptoms
+I'm experiencing blurred vision and dizziness,listing_symptoms
+My joints ache and I have a rash,listing_symptoms
+I feel numbness and tingling in my hands and feet,listing_symptoms
+I have trouble sleeping and feel restless,listing_symptoms
+I feel irritable and have mood swings,listing_symptoms
+My appetite has decreased and I feel nauseous,listing_symptoms
+I have frequent urination and feel thirsty,listing_symptoms
+I'm experiencing memory loss and confusion,listing_symptoms
+I feel bloated and have indigestion,listing_symptoms
+I have back pain and muscle stiffness,listing_symptoms
+I'm coughing up blood and have chest congestion,listing_symptoms
+I have a skin rash and itching,listing_symptoms
+I feel lightheaded and have palpitations,listing_symptoms
+I'm experiencing hair loss and brittle nails,listing_symptoms
+My gums are bleeding and I have bad breath,listing_symptoms
+I feel anxious and have panic attacks,listing_symptoms
+I have a lump in my throat and difficulty swallowing,listing_symptoms
+I'm experiencing joint swelling and stiffness,listing_symptoms
+I have frequent headaches and migraines,listing_symptoms
+I feel tired and have trouble concentrating,listing_symptoms
+My muscles are cramping and I have spasms,listing_symptoms
+I'm experiencing vision changes and eye pain,listing_symptoms
+I have a sore throat and swollen glands,listing_symptoms
+I feel dizzy when standing up and have low blood pressure,listing_symptoms
+I'm experiencing hot flashes and night sweats,listing_symptoms
+I have a metallic taste in my mouth and feel nauseous,listing_symptoms
+I feel depressed and have suicidal thoughts,listing_symptoms
+My skin is itchy and I have hives,listing_symptoms
+I'm experiencing bloating and gas,listing_symptoms
+I have difficulty breathing and chest tightness,listing_symptoms
+I feel tired all the time and have no energy,listing_symptoms
+My stomach is upset and I have acid reflux,listing_symptoms
+I'm experiencing muscle weakness and fatigue,listing_symptoms
+I have trouble swallowing and a lump in my throat,listing_symptoms
+I feel dizzy and lightheaded when standing up,listing_symptoms
+I'm experiencing frequent nosebleeds and bruising,listing_symptoms
+I have a metallic taste in my mouth and feel faint,listing_symptoms
+I feel dizzy and have a ringing in my ears,listing_symptoms
+I'm experiencing frequent infections and slow healing,listing_symptoms
+I have a bitter taste in my mouth and feel nauseous,listing_symptoms
+I feel dizzy and have chest pain,listing_symptoms
+I'm experiencing dry eyes and blurred vision,listing_symptoms
+I have a persistent cough and chest congestion,listing_symptoms
+I feel weak and have swollen lymph nodes,listing_symptoms
+My skin is sensitive and I have a rash,listing_symptoms
+I'm experiencing muscle cramps and spasms,listing_symptoms
+I have frequent heartburn and indigestion,listing_symptoms
+I feel dizzy and have a headache,listing_symptoms
+I'm experiencing frequent urination and thirst,listing_symptoms
+I have a dry cough and difficulty breathing,listing_symptoms
+I feel tired and have joint pain,listing_symptoms
+My skin is dry and itchy,listing_symptoms
+I'm experiencing chest pain and shortness of breath,listing_symptoms
+I have a persistent cough and wheezing,listing_symptoms
+I feel weak and have swollen joints,listing_symptoms
+My skin is pale and I feel faint,listing_symptoms
+I'm experiencing mood swings and irritability,listing_symptoms
+I have a sore throat and cough,listing_symptoms
+I feel dizzy and have nausea,listing_symptoms
+I'm experiencing difficulty concentrating and memory loss,listing_symptoms
+I have a headache and fatigue,listing_symptoms
+I feel tired and have muscle weakness,listing_symptoms
+My skin is red and inflamed,listing_symptoms
+I'm experiencing frequent urination and thirst,listing_symptoms
+I have a persistent cough and chest pain,listing_symptoms
+I feel weak and have joint stiffness,listing_symptoms
