@@ -8,21 +8,33 @@ from io import StringIO
 from IPython.display import Image  
 from sklearn.tree import export_graphviz
 import pickle
+import joblib
+from sklearn import preprocessing
 
 def sec_predict(symptoms_exp):
-    df = pd.read_csv('E:\Code_Project\PBL7\AI-Healthcare\\app\Data\Training.csv')
-    X = df.iloc[:, :-1]
-    y = df['prognosis']
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=20)
-    rf_clf = DecisionTreeClassifier()
-    rf_clf.fit(X_train, y_train)
+    
+    model_path = 'D:\Project\Chatbot\\app\model\\random_forest_model.pkl'
+    clf = joblib.load(model_path)
 
-    symptoms_dict = {symptom: index for index, symptom in enumerate(X)}
+    training = pd.read_csv('/content/drive/MyDrive/PBL7/Training.csv')
+    cols = training.columns[:-1]
+    y = training['prognosis']
+
+    # Mapping strings to numbers
+    le = preprocessing.LabelEncoder()
+    le.fit(y)
+
+
+    symptoms_dict = {symptom: index for index, symptom in enumerate(cols)}
     input_vector = np.zeros(len(symptoms_dict))
-    for item in symptoms_exp:
-      input_vector[[symptoms_dict[item]]] = 1
+    for symptom in symptoms_exp:
+        if symptom in symptoms_dict:
+            input_vector[symptoms_dict[symptom]] = 1
+    predicted_disease_encoded = clf.predict([input_vector])[0]
+    predicted_disease = le.inverse_transform([predicted_disease_encoded])
+    return predicted_disease[0]
+    
 
-    return rf_clf.predict([input_vector])
 
 symptoms = ["muscle_wasting", "patches_in_throat", "high_fever"]
 predicted_disease = sec_predict(symptoms)
