@@ -9,9 +9,9 @@ from sklearn.model_selection import cross_val_score
 from sklearn.svm import SVC
 import csv
 import warnings
+from Constants.AppString import XGBOOST_MODEL_PATH_ALLAN
 
-
-data = pd.read_csv('E:\Code_Project\PBL7\AI-Healthcare\\app\model\xgboost_model.pkl')
-data.info();
+data = pd.read_csv(XGBOOST_MODEL_PATH_ALLAN)
+data.info()
 
 # print("huy")

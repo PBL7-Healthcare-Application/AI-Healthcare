@@ -5,13 +5,15 @@ import json
 import random
 import nltk
 from nltk.stem import WordNetLemmatizer
+__package__ = 'Constants'
+# from ..Constants.AppString import PATH_MODEL_ALLAN, PATH_INTENT_ALLAN
 
 app = Flask(__name__)
 
 lemmatizer = WordNetLemmatizer()
-model = load_model('E:\Code_Project\PBL7\AI-Healthcare\\app\model\chatbot_model.h5')
+model = load_model('F:\PBL7\AI-Healthcare\\app\model\chatbot_model.h5')
 
-with open('E:\Code_Project\PBL7\AI-Healthcare\\app\Data\intents.json') as file:
+with open('F:\PBL7\AI-Healthcare\\app\Data\intents.json') as file:
     intents = json.load(file)
 
 words = [] # Danh sách các từ duy nhất
@@ -25,7 +27,6 @@ for intent in intents['intents']:
         documents.append((word_list, intent['tag']))
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
-
 words = [lemmatizer.lemmatize(w.lower()) for w in words if w not in ignore_words]
 words = sorted(list(set(words)))
 
