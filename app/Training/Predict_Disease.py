@@ -2,52 +2,135 @@ import numpy as np
 from joblib import load
 import pandas as pd
 import pickle
-def predict_disease_from_symptom(symptom_list):
-    symptoms = {'itching': 0, 'skin_rash': 0, 'nodal_skin_eruptions': 0, 'continuous_sneezing': 0,
-                'shivering': 0, 'chills': 0, 'joint_pain': 0, 'stomach_pain': 0, 'acidity': 0, 'ulcers_on_tongue': 0,
-                'muscle_wasting': 0, 'vomiting': 0, 'burning_micturition': 0, 'spotting_ urination': 0, 'fatigue': 0,
-                'weight_gain': 0, 'anxiety': 0, 'cold_hands_and_feets': 0, 'mood_swings': 0, 'weight_loss': 0,
-                'restlessness': 0, 'lethargy': 0, 'patches_in_throat': 0, 'irregular_sugar_level': 0, 'cough': 0,
-                'high_fever': 0, 'sunken_eyes': 0, 'breathlessness': 0, 'sweating': 0, 'dehydration': 0,
-                'indigestion': 0, 'headache': 0, 'yellowish_skin': 0, 'dark_urine': 0, 'nausea': 0, 'loss_of_appetite': 0,
-                'pain_behind_the_eyes': 0, 'back_pain': 0, 'constipation': 0, 'abdominal_pain': 0, 'diarrhoea': 0, 'mild_fever': 0,
-                'yellow_urine': 0, 'yellowing_of_eyes': 0, 'acute_liver_failure': 0, 'fluid_overload': 0, 'swelling_of_stomach': 0,
-                'swelled_lymph_nodes': 0, 'malaise': 0, 'blurred_and_distorted_vision': 0, 'phlegm': 0, 'throat_irritation': 0,
-                'redness_of_eyes': 0, 'sinus_pressure': 0, 'runny_nose': 0, 'congestion': 0, 'chest_pain': 0, 'weakness_in_limbs': 0,
-                'fast_heart_rate': 0, 'pain_during_bowel_movements': 0, 'pain_in_anal_region': 0, 'bloody_stool': 0,
-                'irritation_in_anus': 0, 'neck_pain': 0, 'dizziness': 0, 'cramps': 0, 'bruising': 0, 'obesity': 0, 'swollen_legs': 0,
-                'swollen_blood_vessels': 0, 'puffy_face_and_eyes': 0, 'enlarged_thyroid': 0, 'brittle_nails': 0, 'swollen_extremeties': 0,
-                'excessive_hunger': 0, 'extra_marital_contacts': 0, 'drying_and_tingling_lips': 0, 'slurred_speech': 0,
-                'knee_pain': 0, 'hip_joint_pain': 0, 'muscle_weakness': 0, 'stiff_neck': 0, 'swelling_joints': 0, 'movement_stiffness': 0,
-                'spinning_movements': 0, 'loss_of_balance': 0, 'unsteadiness': 0, 'weakness_of_one_body_side': 0, 'loss_of_smell': 0,
-                'bladder_discomfort': 0, 'foul_smell_of urine': 0, 'continuous_feel_of_urine': 0, 'passage_of_gases': 0, 'internal_itching': 0,
-                'toxic_look_(typhos)': 0, 'depression': 0, 'irritability': 0, 'muscle_pain': 0, 'altered_sensorium': 0,
-                'red_spots_over_body': 0, 'belly_pain': 0, 'abnormal_menstruation': 0, 'dischromic _patches': 0, 'watering_from_eyes': 0,
-                'increased_appetite': 0, 'polyuria': 0, 'family_history': 0, 'mucoid_sputum': 0, 'rusty_sputum': 0, 'lack_of_concentration': 0,
-                'visual_disturbances': 0, 'receiving_blood_transfusion': 0, 'receiving_unsterile_injections': 0, 'coma': 0,
-                'stomach_bleeding': 0, 'distention_of_abdomen': 0, 'history_of_alcohol_consumption': 0, 'fluid_overload.1': 0,
-                'blood_in_sputum': 0, 'prominent_veins_on_calf': 0, 'palpitations': 0, 'painful_walking': 0, 'pus_filled_pimples': 0,
-                'blackheads': 0, 'scurring': 0, 'skin_peeling': 0, 'silver_like_dusting': 0, 'small_dents_in_nails': 0, 'inflammatory_nails': 0,
-                'blister': 0, 'red_sore_around_nose': 0, 'yellow_crust_ooze': 0}
+import re
+import os
+import csv
+import random
+
+def contains_disease_info(text):
+    csv_file_path = os.path.join("app/Data", 'diseases.csv')
+    df = pd.read_csv(csv_file_path)
+    disease_keywords = df['Drug Reaction'].tolist()
+    disease_pattern = re.compile(r'\b(' + '|'.join(re.escape(keyword) for keyword in disease_keywords) + r')\b', re.IGNORECASE)
     
-    # Set value to 1 for corresponding symptoms
-    for s in symptom_list:
-        symptoms[s] = 1
+    # Tìm kiếm trong đoạn văn bản
+    match = disease_pattern.search(text)
+    if match:
+        return match.group(0).lower()
+    else:
+        return None
     
-    # Put all data in a test dataset
-    df_test = pd.DataFrame(columns=list(symptoms.keys()))
-    df_test.loc[0] = np.array(list(symptoms.values()))
+
+def find_disease_description(text):
+    # Đọc file CSV để lấy danh sách các mô tả bệnh
+    description_list = {}
+    csv_file_path = os.path.join("app/Data", 'symptom_Description.csv')
+    with open(csv_file_path) as csv_file:  # Thay bằng đường dẫn thực tế đến file
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        for line_count, row in enumerate(csv_reader):
+            if line_count == 0:
+                continue  # Bỏ qua dòng tiêu đề
+            description_list[row[0].lower()] = row[1]
     
-    # Load pre-trained model
-    model_path = r'E:\\Code_Project\\PBL7\AI-Healthcare\\app\\model\\xgboost_model.pkl'
-    with open(model_path, 'rb') as file:
-        model = pickle.load(file)
-    symptoms_dict = {symptom: index for index, symptom in enumerate(X)}
-    input_vector = np.zeros(len(symptoms_dict))
-    for item in symptom_list:
-      if item in symptoms_dict:
-        input_vector[symptoms_dict[item]] = 1
-    return model.predict(df_test)
+    # Tạo danh sách các từ khóa từ description_list
+    disease_keywords = list(description_list.keys())
+    
+    # Tạo một mẫu regex từ danh sách từ khóa
+    disease_pattern = re.compile(r'\b(' + '|'.join(re.escape(keyword) for keyword in disease_keywords) + r')\b', re.IGNORECASE)
+    
+    # Tìm kiếm trong đoạn văn bản
+    match = disease_pattern.search(text)
+    if match:
+        disease_name = match.group(0)
+        return description_list[disease_name.lower()]
+    else:
+        return "No disease information found in the text."
 
 
 
+def find_disease_advice(text):
+    description_list = {}
+    csv_file_path = os.path.join("app/Data", 'symptom_precaution.csv')
+    with open(csv_file_path) as csv_file:  # Thay bằng đường dẫn thực tế đến file
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        for line_count, row in enumerate(csv_reader):
+            if line_count == 0:
+                continue  # Bỏ qua dòng tiêu đề
+            description_list[row[0].lower()] = [row[1:]]
+    
+    # Tạo danh sách các từ khóa từ description_list
+    disease_keywords = list(description_list.keys())
+    
+    # Tạo một mẫu regex từ danh sách từ khóa
+    disease_pattern = re.compile(r'\b(' + '|'.join(re.escape(keyword) for keyword in disease_keywords) + r')\b', re.IGNORECASE)
+    
+    # Tìm kiếm trong đoạn văn bản
+    match = disease_pattern.search(text)
+    if match:
+        disease_name = match.group(0)
+        return description_list[disease_name.lower()]
+    else:
+        return "No disease information found in the text."
+    
+
+def get_time_from_sentence(sentence):
+    # Biểu thức chính quy để tìm kiếm thông tin thời gian trong câu
+    time_pattern = r'\b(\d+|\w+)\s*(day|week|month|year)s?\b'  # Biểu thức chính quy tìm kiếm số hoặc chữ kèm theo đơn vị thời gian
+
+    # Tìm tất cả các chuỗi thời gian trong câu
+    matches = re.findall(time_pattern, sentence, re.IGNORECASE)
+
+    # Duyệt qua các kết quả và xử lý chúng
+    total_days = 0
+    for match in matches:
+        time_value = match[0]  # Giá trị thời gian (số hoặc chữ)
+        time_unit = match[1]   # Đơn vị thời gian
+        # Chuyển đổi các giá trị chữ thành số nếu cần
+        if time_value.isdigit():
+            time_value = int(time_value)
+        else:
+            # Xử lý các giá trị chữ thành số tương ứng
+            if time_value.lower() == 'a': 
+                time_value = 1
+            elif time_value.lower() == 'an':  
+                time_value = 1
+            elif time_value.lower() == 'two':
+                time_value = 2
+            elif time_value.lower() == 'three':
+                time_value = 3
+            elif time_value.lower() == 'four':
+                time_value = 4
+            elif time_value.lower() == 'five':
+                time_value = 5
+            elif time_value.lower() == 'six':
+                time_value = 6
+            elif time_value.lower() == 'seven':
+                time_value = 7
+            elif time_value.lower() == 'eight':
+                time_value = 8
+            elif time_value.lower() == 'nine':
+                time_value = 9
+            
+        if time_unit == 'day':
+            total_days += time_value
+        elif time_unit == 'week':
+            total_days += time_value * 7
+        elif time_unit == 'month':
+            total_days += time_value * 30  # Giả sử một tháng là 30 ngày
+        elif time_unit == 'year':
+            total_days += time_value * 365  # Giả sử một năm là 365 ngày
+
+    return total_days
+
+def find_symptoms_from_disease(text):
+    symptoms_list = []
+    csv_file_path = os.path.join("app/Data", 'dataset.csv')
+    with open(csv_file_path) as csv_file:  # Thay bằng đường dẫn thực tế đến file
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        for line_count, row in enumerate(csv_reader):
+            if line_count == 0:
+                continue  # Bỏ qua dòng tiêu đề
+            if text.lower() in row[0].lower():
+                filtered_row = [item for item in row[1:] if item != '']
+                symptoms_list.append([row[0], filtered_row])
+    return random.choice(symptoms_list)[1]

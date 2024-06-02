@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report, accuracy_score
 import joblib
+import os
 # Đường dẫn đến các tệp dữ liệu
 # file_paths = [pd.read_csv("E:\Code_Project\PBL7\AI-Healthcare\\app\Intent\Ask_Advice.csv"), pd.read_csv("E:\Code_Project\PBL7\AI-Healthcare\\app\Intent\Ask_disease_info.csv"), pd.read_csv("E:\Code_Project\PBL7\AI-Healthcare\\app\Intent\Ask_symptoms.csv"),pd.read_csv("E:\Code_Project\PBL7\AI-Healthcare\\app\Intent\FareWell.csv"),pd.read_csv("E:\Code_Project\PBL7\AI-Healthcare\\app\Intent\Feeling_sick.csv"),pd.read_csv("E:\Code_Project\PBL7\AI-Healthcare\\app\Intent\Greeting.csv"),pd.read_csv("E:\Code_Project\PBL7\AI-Healthcare\\app\Intent\Listing_Symptoms.csv")]  # Thay đổi thành các đường dẫn thực tế của bạn
 
@@ -49,8 +50,10 @@ import joblib
 
 # Hàm dự đoán ý định
 def predict_intent(text):
-    model_path = 'E:\Code_Project\PBL7\AI-Healthcare\\app\model\model.pkl'
-    vectorizer_path = 'E:\Code_Project\PBL7\AI-Healthcare\\app\model\\vectorizer.pkl'
+    model_path = os.path.join("app/model", 'model.pkl')
+    vectorizer_path = os.path.join("app/model", 'vectorizer.pkl')
+    # model_path = 'E:\Code_Project\PBL7\AI-Healthcare\\app\model\model.pkl'
+    # vectorizer_path = 'E:\Code_Project\PBL7\AI-Healthcare\\app\model\\vectorizer.pkl'
 
 # Tải mô hình và vectorizer
     clf = joblib.load(model_path)
@@ -59,5 +62,3 @@ def predict_intent(text):
     intent = clf.predict(text_vector)[0]
     return intent
 
-# - đưa ra lời khuyên
-# - đưa ra thông tin về bệnh
