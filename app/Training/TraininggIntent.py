@@ -49,8 +49,10 @@ import joblib
 
 # Hàm dự đoán ý định
 def predict_intent(text):
-    model_path = 'E:\Code_Project\PBL7\AI-Healthcare\\app\model\model.pkl'
-    vectorizer_path = 'E:\Code_Project\PBL7\AI-Healthcare\\app\model\\vectorizer.pkl'
+    # model_path = 'E:\Code_Project\PBL7\AI-Healthcare\\app\model\model.pkl'
+    # vectorizer_path = 'E:\Code_Project\PBL7\AI-Healthcare\\app\model\\vectorizer.pkl'
+    model_path = 'F:\PBL7\AI-Healthcare\\app\model\model.pkl'
+    vectorizer_path = 'F:\PBL7\AI-Healthcare\\app\model\\vectorizer.pkl'
 
 # Tải mô hình và vectorizer
     clf = joblib.load(model_path)
@@ -61,3 +63,6 @@ def predict_intent(text):
 
 # - đưa ra lời khuyên
 # - đưa ra thông tin về bệnh
+
+a = predict_intent("I have headaches, dizziness")
+print(a)
