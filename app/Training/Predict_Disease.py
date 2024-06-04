@@ -1,5 +1,5 @@
-import numpy as np
-from joblib import load
+import joblib
+from sklearn import preprocessing
 import pandas as pd
 import pickle
 import re
@@ -134,3 +134,27 @@ def find_symptoms_from_disease(text):
                 filtered_row = [item for item in row[1:] if item != '']
                 symptoms_list.append([row[0], filtered_row])
     return random.choice(symptoms_list)[1]
+
+import numpy as np
+
+def predict_disease_from_symptom(symptoms_exp):
+    csv_file_path = os.path.join("app/model", 'random_forest_model1.joblib')
+    csv_file_path_data = os.path.join("app/Data", 'Training.csv')
+    clf = joblib.load(csv_file_path)
+
+    # Load the data again to have the symptoms list and label encoder
+    training = pd.read_csv(csv_file_path_data)
+    cols = training.columns[:-1]
+    y = training['prognosis']
+
+    # Mapping strings to numbers
+    le = preprocessing.LabelEncoder()
+    le.fit(y)
+    symptoms_dict = {symptom: index for index, symptom in enumerate(cols)}
+    input_vector = np.zeros(len(symptoms_dict))
+    for symptom in symptoms_exp:
+        if symptom in symptoms_dict:
+            input_vector[symptoms_dict[symptom]] = 1
+    predicted_disease_encoded = clf.predict([input_vector])[0]
+    predicted_disease = le.inverse_transform([predicted_disease_encoded])
+    return predicted_disease[0]
