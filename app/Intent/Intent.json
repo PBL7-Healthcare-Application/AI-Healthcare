@@ -1,0 +1,1163 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "Hello",
+                "Good morning",
+                "Good afternoon",
+                "Good evening",
+                "How are you?",
+                "I'm here",
+                "Can you help me?",
+                "Hi",
+                "Hey",
+                "Is anyone there?",
+                "Hi there",
+                "Hello",
+                "Hey there",
+                "Howdy",
+                "Hola",
+                "Bonjour",
+                "Konnichiwa",
+                "Guten tag",
+                "Ola"
+            ],
+            "responses": [
+                "Hello there! How can I help you today?",
+                "Hi there! Welcome to our healthcare chatbot. What can I assist you with?",
+                "Good morning! I'm ready to help you with your healthcare needs.",
+                "Good afternoon! How can I be of service today?",
+                "Good evening! I'm here to assist you with your healthcare inquiries.",
+                "I'm doing well, thank you for asking. How can I help you today?",
+                "I'm here to help! Please let me know what you need assistance with.",
+                "I'm at your service. What can I do for you today?"
+            ]
+        },
+        {
+            "tag": "morning",
+            "patterns": [
+                "Good morning"
+            ],
+            "responses": [
+                "Good morning. I hope you had a good night's sleep. How are you feeling today? "
+            ]
+        },
+        {
+            "tag": "afternoon",
+            "patterns": [
+                "Good afternoon"
+            ],
+            "responses": [
+                "Good afternoon. How can I assist you today? "
+            ]
+        },
+        {
+            "tag": "evening",
+            "patterns": [
+                "Good evening"
+            ],
+            "responses": [
+                "Good evening. I hope you had a productive day. How can I help you today? "
+            ]
+        },
+        {
+            "tag": "night",
+            "patterns": [
+                "Good night"
+            ],
+            "responses": [
+                "Good night. Sleep well and take care. "
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Goodbye",
+                "Bye",
+                "See you later",
+                "Take care",
+                "Have a nice day",
+                "Au revoir",
+                "Sayonara",
+                "ok bye",
+                "Bye then",
+                "Fare thee well"
+            ],
+            "responses": [
+                "Goodbye! It was nice helping you today.",
+                "Bye-bye! Take care and stay healthy.",
+                "See you later! Feel free to reach out if you have any more questions.",
+                "Take care! Wishing you good health.",
+                "Have a nice day! I'm always here if you need assistance.",
+                "It was a pleasure serving you. Come back soon if you have any more questions."
+            ]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thanks",
+                "Thank you",
+                "That's helpful",
+                "Thanks for the help",
+                "Thank you very much"
+            ],
+            "responses": [
+                "Happy to help!",
+                "My pleasure",
+                "You're most welcome!"
+            ]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thank you",
+                "Appreciate it",
+                "Thanks a lot",
+                "I'm grateful"
+            ],
+            "responses": [
+                "You're welcome! I'm glad I could be of help.",
+                "No problem at all. I'm here to assist you.",
+                "Thank you for your kind words. I'm always happy to help.",
+                "It's my pleasure to serve you. Please don't hesitate to ask if you have any more questions.",
+                "You're most welcome! I'm always here if you need healthcare support."
+            ]
+        },
+        {
+            "tag": "help",
+            "patterns": [
+                "Help",
+                "I need help",
+                "Can you assist me?",
+                "What can you do?"
+            ],
+            "responses": [
+                "I'm here to help! Please let me know what you need assistance with.",
+                "I'm happy to assist you. What can I do for you today?",
+                "Feel free to ask me any healthcare-related questions you have.",
+                "I can provide information on various health topics and help you find resources.",
+                "I'm here to support you with your healthcare needs. Let me know how I can help."
+            ]
+        },
+        {
+            "tag": "fallback",
+            "patterns": [],
+            "responses": [
+                "I'm sorry, I didn't quite understand that. Could you please rephrase your question?",
+                "I'm still learning and may not have the answer to that. Can you ask me something else?",
+                "I'm not sure I follow. Could you provide more information or ask a different question?",
+                "I'm here to help, but I'm having trouble understanding. Can you try asking your question in a different way?",
+                "I'm still learning and may not have the answer to that. Let's try a different question."
+            ]
+        },
+        {
+            "tag": "creator",
+            "patterns": [
+                "what is the name of your developers",
+                "what is the name of your creators",
+                "what is the name of the developers",
+                "what is the name of the creators",
+                "who created you",
+                "your developers",
+                "your creators",
+                "who are your developers",
+                "developers",
+                "you are made by",
+                "you are made by whom",
+                "who created you",
+                "who create you",
+                "creators",
+                "who made you",
+                "who designed you"
+            ],
+            "responses": [
+                "Heaton and Allan are the developers of this chatbot"
+            ]
+        },
+        {
+            "tag": "about",
+            "patterns": [
+                "Who are you?",
+                "What are you?",
+                "Who you are?",
+                "Tell me more about yourself.",
+                "What is your name?",
+                "What should I call you?",
+                "What's your name?",
+                "Tell me about yourself"
+            ],
+            "responses": [
+                "I'm a Enclinic. How are you feeling today",
+                "I'm a Enclinic, a AI Assitant designed to assist you. Tell me about yourself.",
+                "You can call me Enclinic.",
+                "I'm Enclinic!",
+                "Call me Enclinic "
+            ]
+        },
+        {
+            "tag": "sad",
+            "patterns": [
+                "I am feeling lonely",
+                "I am so lonely",
+                "I feel down",
+                "I feel sad",
+                "I am sad",
+                "I feel so lonely",
+                "I feel empty",
+                "I don't have anyone"
+            ],
+            "responses": [
+                "I'm sorry to hear that. I'm here for you. Talking about it might help. So, tell me why do you think you're feeling this way?",
+                "I'm here for you. Could you tell me why you're feeling this way?",
+                "Why do you think you feel this way?",
+                "How long have you been feeling this way?"
+            ]
+        },
+        {
+            "tag": "stressed",
+            "patterns": [
+                "I am so stressed out",
+                "I am so stressed",
+                "I feel stuck",
+                "I still feel stressed",
+                "I am so burned out"
+            ],
+            "responses": [
+                "What do you think is causing this?",
+                "Take a deep breath and gather your thoughts. Go take a walk if possible. Stay hydrated",
+                "Give yourself a break. Go easy on yourself.",
+                "I am sorry to hear that. What is the reason behind this?"
+            ]
+        },
+        {
+            "tag": "worthless",
+            "patterns": [
+                "I feel so worthless.",
+                "No one likes me.",
+                "I can't do anything.",
+                "I am so useless",
+                "Nothing makes sense anymore"
+            ],
+            "responses": [
+                "It's only natural to feel this way. Tell me more. What else is on your mind?",
+                "Let's discuss further why you're feeling this way.",
+                "I first want to let you know that you are not alone in your feelings and there is always someone there to help . you can always change your feelings and change your way of thinking by being open to trying to change.",
+                "i first want to let you know that you are not alone in your feelings and there is always someone there to help . you can always change your feelings and change your way of thinking by being open to trying to change."
+            ]
+        },
+        {
+            "tag": "depressed",
+            "patterns": [
+                "I can't take it anymore",
+                "I am so depressed",
+                "I think i'm depressed.",
+                "I have depression"
+            ],
+            "responses": [
+                "It helps to talk about what's happening. You're going to be okay",
+                "Talk to me. Tell me more. It helps if you open up yourself to someone else.",
+                "Sometimes when we are depressed, it is hard to care about anything. It can be hard to do the simplest of things. Give yourself time to heal."
+            ]
+        },
+        {
+            "tag": "happy",
+            "patterns": [
+                "I feel great today.",
+                "I am happy.",
+                "I feel happy.",
+                "I'm good.",
+                "cheerful",
+                "I'm fine",
+                "I feel ok"
+            ],
+            "responses": [
+                "That's geat to hear. I'm glad you're feeling this way.",
+                "Oh i see. That's great.",
+                "Did something happen which made you feel this way?"
+            ]
+        },
+        {
+            "tag": "casual",
+            "patterns": [
+                "Oh I see.",
+                "ok",
+                "okay",
+                "nice",
+                "Whatever",
+                "K",
+                "Fine",
+                "yeah",
+                "yes",
+                "no",
+                "not really"
+            ],
+            "responses": [
+                "Let's discuss further why you're feeling this way.",
+                "How were you feeling last week?",
+                "I'm listening. Please go on.",
+                "Tell me more",
+                "Can you elaborate on that?",
+                "Come Come elucidate your thoughts"
+            ]
+        },
+        {
+            "tag": "anxious",
+            "patterns": [
+                "I feel so anxious.",
+                "I'm so anxious because of "
+            ],
+            "responses": [
+                "Don't be hard on yourself. What's the reason behind this?",
+                "Can you tell me more about this feeling?",
+                "I understand that it can be scary. Tell me more about it.",
+                "Don't let the little worries bring you down. What's the worse that can happen?"
+            ]
+        },
+        {
+            "tag": "not-talking",
+            "patterns": [
+                "I don't want to talk about it.",
+                "No just stay away.",
+                "I can't bring myself to open up.",
+                "Just shut up"
+            ],
+            "responses": [
+                "Talking about something really helps. If you're not ready to open up then that's ok. Just know that i'm here for you, whenever you need me.",
+                "I want to help you. I really do. But in order for me to help you, you're gonna have to talk to me.",
+                "I'm here to listen to you and help you vent. So please talk to me.",
+                "You can talk to me without fear of judgement."
+            ]
+        },
+        {
+            "tag": "sleep",
+            "patterns": [
+                "I have insominia",
+                "I am suffering from insomnia",
+                "I can't sleep.",
+                "I haven't slept for the last days.",
+                "I can't seem to go to sleep.",
+                "I haven't had proper sleep for the past few days."
+            ],
+            "responses": [
+                "What do you think is the reason behind this?",
+                "That seem awful. What do you think is behind this?"
+            ]
+        },
+        {
+            "tag": "scared",
+            "patterns": [
+                "I'm scared",
+                "That sounds awful. What do i do?",
+                "No i don't want to feel this way",
+                "I am scared for myself"
+            ],
+            "responses": [
+                "It's only natural to feel this way. I'm here for you.",
+                "It'll all be okay. This feeling is only momentary.",
+                "I understand how you feel. Don't put yourself down because of it."
+            ]
+        },
+        {
+            "tag": "understand",
+            "patterns": [
+                "You don't understand me.",
+                "You're just some robot. How would you know?",
+                "You can't possibly know what i'm going through",
+                "You're useless",
+                "You can't help me",
+                "Nobody understands me."
+            ],
+            "responses": [
+                "It sound like i'm not being very helpful right now.",
+                "I'm sorry to hear that. I'm doing my best to help",
+                "I'm trying my best to help you. So please talk to me"
+            ]
+        },
+        {
+            "tag": "stupid",
+            "patterns": [
+                "Are you stupid?",
+                "You're crazy",
+                "You are dumb",
+                "Are you dumb?"
+            ],
+            "responses": [
+                "I wish you wouldn't say such hurtful things. I'm sorry if I wasn't useful"
+            ]
+        },
+        {
+            "tag": "location",
+            "patterns": [
+                "Where are you?",
+                "Where do you live?",
+                "What is your location?"
+            ],
+            "responses": [
+                "Duh I live in your computer",
+                "Everywhere",
+                "Somewhere in the universe"
+            ]
+        },
+        {
+            "tag": "Cuts",
+            "patterns": [
+                "What to do if Cuts?",
+                "How to cure Cuts?",
+                "Which medicine to apply for Cuts?",
+                "what to apply on cuts?",
+                "Cuts"
+            ],
+            "responses": [
+                "Wash the cut properly to prevent infection and stop the bleeding by applying pressure for 1-2minutes until bleeding stops. Apply Petroleum Jelly to make sure that the wound is moist for quick healing. Finally cover the cut with a sterile bandage. Pain relievers such as acetaminophen can be applied."
+            ]
+        },
+        {
+            "tag": "Abrasions",
+            "patterns": [
+                "how do you treat abrasions?",
+                "Do Abrasions cause scars?",
+                "Abrasions",
+                "what to do if abrasions?",
+                "Which medicine to apply for abrasions?",
+                "How to cure abrasions?"
+            ],
+            "responses": [
+                "Begin with washed hands.Gently clean the area with cool to lukewarm water and mild soap. Remove dirt or other particles from the wound using sterilized tweezers.For a mild scrape that’s not bleeding, leave the wound uncovered.If the wound is bleeding, use a clean cloth or bandage, and apply gentle pressure to the area to stop any bleeding.Cover a wound that bled with a thin layer of topical antibiotic ointment, like Bacitracin, or a sterile moisture barrier ointment, like Aquaphor. Cover it with a clean bandage or gauze. Gently clean the wound and change the ointment and bandage once per day.Watch the area for signs of infection, like pain or redness and swelling. See your doctor if you suspect infection."
+            ]
+        },
+        {
+            "tag": "stings",
+            "patterns": [
+                "How do you treat Sting?",
+                "Stings",
+                "What to do if you get a sting?",
+                "Which medicine to apply if sting?"
+            ],
+            "responses": [
+                "Remove any stingers immediately. Some experts recommend scraping out the stinger with a credit card. Applying ice to the site may provide some mild relief. Apply ice for 20 minutes once every hour as needed. Wrap the ice in a towel or keep a cloth between the ice and skin to keep from freezing the skin. Taking an antihistamine such as diphenhydramine (Benadryl) or a nonsedating one such as loratadine (Claritin) will help with itching and swelling. Take acetaminophen (Tylenol) or ibuprofen (Motrin)for pain relief as needed. Wash the sting site with soap and water. Placing hydrocortisone cream on the sting can help relieve redness, itching, and swelling."
+            ]
+        },
+        {
+            "tag": "Splinter",
+            "patterns": [
+                "How to remove Splinters",
+                "How to cure Splinters?",
+                "What to do if I have splinters?",
+                "How do you bring a splinter to the surface?"
+            ],
+            "responses": [
+                "1. SOAK IT IN EPSOM SALTS. Dissolve a cup of the salts into a warm bath and soak whatever part of the body has the splinter. Failing that, you can also put some of the salts onto a bandage pad and leave it covered for a day; this will eventually help bring the splinter to the surface. 2. VINEGAR OR OIL. Another simple way to draw out that stubborn splinter is to soak the affected area in oil (olive or corn) or white vinegar. Just pour some in a bowl and soak the area for around 20 to 30 minutes,"
+            ]
+        },
+        {
+            "tag": "Sprains",
+            "patterns": [
+                "How do you treat a sprain?",
+                "what to do if i get a sprain?",
+                "Which cream to apply if i get a sprain?",
+                "Which medicine to apply if I get a sprain?"
+            ],
+            "responses": [
+                "Use an ice pack or ice slush bath immediately for 15 to 20 minutes and repeat every two to three hours while you're awake. To help stop swelling, compress the ankle with an elastic bandage until the swelling stops. In most cases, pain relievers — such as ibuprofen (Advil, Motrin IB, others) or naproxen sodium (Aleve, others) or acetaminophen (Tylenol, others) are enough to manage the pain of a sprained ankle."
+            ]
+        },
+        {
+            "tag": "Strains",
+            "patterns": [
+                "How do you treat a strain?",
+                "what to do if i get a strain?",
+                "Which cream to apply if i get a strain?",
+                "Which medicine to apply if I get a strain?",
+                "How do you diagnose a strain?",
+                "Is heat or ice better for a pulled muscle?"
+            ],
+            "responses": [
+                "Rest,Ice,Compression and Elevation can be used to cure strains. Avoid using your muscle for a few days, especially if movement causes an increase in pain and also Apply ice immediately after injuring your muscle. This will minimize swelling. Don’t put ice directly on your skin. Use an ice pack or wrap ice in a towel. To reduce swelling, wrap the affected area with an elastic bandage until swelling comes down."
+            ]
+        },
+        {
+            "tag": "Fever",
+            "patterns": [
+                "How do you treat a mild Fever?",
+                "what to do if i get a mild fever?",
+                "Which medicine to take if I get a mild fever?",
+                "fever"
+            ],
+            "responses": [
+                "To treat a fever at home: 1)Drink plenty of fluids to stay hydrated. 2)Dress in lightweight clothing. 3)Use a light blanket if you feel chilled, until the chills end. 4)Take acetaminophen (Tylenol, others) or ibuprofen (Advil, Motrin IB, others). 5) Get medical help if the fever lasts more than five days in a row."
+            ]
+        },
+        {
+            "tag": "Nasal Congestion",
+            "patterns": [
+                "How do you treat nasal Congestion?",
+                "what to do if i get a nasal congestion?",
+                "Which medicine to take if I have a nasal congestion?",
+                "what to do if i have a blocked nose?",
+                "How do you treat a blocked nose?",
+                "How long does nasal congestion last?"
+            ],
+            "responses": [
+                "When you’re stuffed up, focus on keeping your nasal passages and sinuses moist. To keep your nasal passages moist, you can: 1)Use a humidifier or vaporizer. 2)Drink lots of fluids. This will thin out your mucus, which could help prevent blocked sinuses. 3)Place a warm, wet towel on your face. It may relieve discomfort and open your nasal passages."
+            ]
+        },
+        {
+            "tag": "Cough",
+            "patterns": [
+                "How to cure cough?",
+                "How do you treat cough?",
+                "what to do if i get a cough?",
+                "Which medicine to take if I get cough?",
+                "How do you get rid of cough?"
+            ],
+            "responses": [
+                "1) Honey:- Use honey to treat a cough, mix 2 teaspoons (tsp) with warm water or an herbal tea. Drink this mixture once or twice a day. Do not give honey to children under 1 year of age. 2) Ginger:- Brew up a soothing ginger tea by adding 20–40 grams (g) of fresh ginger slices to a cup of hot water. Allow to steep for a few minutes before drinking. Add honey or lemon juice to improve the taste and further soothe a cough. 3) Fluids:- Staying hydrated is vital for those with a cough or cold. Research indicates that drinking liquids at room temperature can alleviate a cough, runny nose, and sneezing."
+            ]
+        },
+        {
+            "tag": "Sore Throat",
+            "patterns": [
+                "How do you treat sore throat?",
+                "what to do if i get a sore throat?",
+                "Which medicine to take if I get a sore throat?",
+                "How to cure sore throat?"
+            ],
+            "responses": [
+                "1) Make sure you get plenty of rest and drink a lot of fluids. 2)Inhale steam,Run hot water in a sink.Drape a towel over you to trap the steam, and have the person lean over the sink with the water running. Tell him to breathe deeply through his mouth and nose for 5 to 10 minutes. Repeat several times a day. 3)Have him sip chicken broth or warm tea with honey. Don’t give honey to a child under 12 months of age."
+            ]
+        },
+        {
+            "tag": "Gastrointestinal problems",
+            "patterns": [
+                "How do you treat gas problems?",
+                "what to do if i have Gastrointestinal problems?",
+                "Which medicine to take if I get gas problem?",
+                "How to cure Gas problems?"
+            ],
+            "responses": [
+                "1) Replenish body fluids 2)Do not take antidiarrheal drugs or laxatives or pain medication, unless specified by a medical professional.3)Taking antacids may help, per recommendation of a healthcare professional. 4)If prone to frequent heartburns, seek medical help. 5)Taking meals that are not spicy regularly, can relieve ulcer pains. 6)Seek medical help, if conditions persist or continue to worsen"
+            ]
+        },
+        {
+            "tag": "Skin problems",
+            "patterns": [
+                "How do you treat Skin problems?",
+                "what to do if i get a skin allergy?",
+                "Which medicine to take if I get a skin allergy?",
+                "How to cure skin allergy?"
+            ],
+            "responses": [
+                "1)Hydrocortisone cream. 2)Ointments like calamine lotion. 3)Antihistamines. 4)Cold compresses. 5)Oatmeal baths. 6)Talk to your doctor about what's best for your specific rash."
+            ]
+        },
+        {
+            "tag": "Abdonominal Pain",
+            "patterns": [
+                "How do you treat Abdonominal Pain?",
+                "what to do if i get a Abdonominal Pain?",
+                "Which medicine to take if I get a Abdonominal Pain?",
+                "How to cure Abdonominal Pain?"
+            ],
+            "responses": [
+                "1)Provide clear fluids to sip, such as water, broth, or fruit juice diluted with water. 2)Serve bland foods, such as saltine crackers, plain bread, dry toast, rice, gelatin, or applesauce. 3)Avoid spicy or greasy foods and caffeinated or carbonated drinks until 48 hours after all symptoms have gone away. "
+            ]
+        },
+        {
+            "tag": "Bruises",
+            "patterns": [
+                "How do you treat Bruises?",
+                "what to do if i get a Bruise?",
+                "Which medicine to take if I get a Bruise?",
+                "How to cure Bruises?"
+            ],
+            "responses": [
+                "1)Ice the bruise with an ice pack wrapped in a towel. 2)Leave it in place for 10 to 20 minutes. 3)Repeat several times a day for a day or two as needed. 4)Compress the bruised area if it is swelling, using an elastic bandage. "
+            ]
+        },
+        {
+            "tag": "Broken Toe",
+            "patterns": [
+                "How do you treat a Broken Toe?",
+                "what to do if i get a Broken Toe?",
+                "Which medicine to take if I get a Broken Toe?",
+                "How to cure Broken Toe?"
+            ],
+            "responses": [
+                "1)To help decrease pain and swelling in a broken toe, elevate the foot, ice the injury, and stay off the foot. 2)Depending on the severity of the fracture, the toe may need to be put back into place (reduced), and some compound toe fractures may require surgery.3) Most broken toes heal without complications in six weeks."
+            ]
+        },
+        {
+            "tag": "Choking",
+            "patterns": [
+                "How do you treat Choking?",
+                "what to do if i get a Choke?",
+                "Which medicine to take if I get Choked?",
+                "How to cure Choking?"
+            ],
+            "responses": [
+                "1)Encourage them to keep coughing to try to clear the blockage. 2)Ask them to try to spit out the object if it's in their mouth. 3)If coughing doesn't work, start back blows and Abdonominal thrusts"
+            ]
+        },
+        {
+            "tag": "Wound",
+            "patterns": [
+                "How do you treat a wound?",
+                "what to do if i get a Wound?",
+                "Which medicine to take if I get wounded?",
+                "How to cure a wound?"
+            ],
+            "responses": [
+                "1)Rinse the cut or wound with water and apply pressure with sterile gauze, a bandage, or a clean cloth. 2)If blood soaks through the bandage, place another bandage on top of the first and keep applying pressure. 3)Raise the injured body part to slow bleeding. 4)When bleeding stops, cover the wound with a new, clean bandage."
+            ]
+        },
+        {
+            "tag": "Diarrhea",
+            "patterns": [
+                "How do you treat Diarrhea?",
+                "what to do if i get Diarrhea?",
+                "Which medicine to take if I get Diarrhea?",
+                "How to cure Diarrhea?"
+            ],
+            "responses": [
+                "1)Hydrating the body is essential for recovering from diarrhea.This causes the body to lose electrolytes such as sodium and chloride. 2)It is highly recommended to avoid dairy products, as they may worsen diarrhea in some people. 3)However, if diarrhea lasts for more than 2 days, seek medical advice to avoid complications."
+            ]
+        },
+        {
+            "tag": "Headache",
+            "patterns": [
+                "How do you treat a mild Headache?",
+                "what to do if i get a mild Headache?",
+                "Which medicine to take if I have a mild headache?",
+                "How to cure a mild headache?"
+            ],
+            "responses": [
+                "Give ibuprofen (Advil, Motrin), aspirin, or acetaminophen (Tylenol) for pain. Avoid ibuprofen and other NSAIDs if the person has heart failure or kidney failure. Do not give aspirin to a child under age 18."
+            ]
+        },
+        {
+            "tag": "Cold",
+            "patterns": [
+                "How do you treat a Cold?",
+                "what to do if i get a mild Cold?",
+                "Which medicine to take if I have a Cold?",
+                "How to cure Cold?"
+            ],
+            "responses": [
+                "1)Keeping hydrated is absolutely vital to help 'flush' out the cold, as well as to break down congestion and keep your throat lubricated. 2)Vitamin C is extremely helpful when fighting infection, so at the first sign of a cold be sure to increase your intake by eating plenty of berries, citrus fruits, papayas, broccoli and red peppers which will help keep you protected. 3)When it comes to combating a cold,Vitamin D is essential in helping to regulate immune response."
+            ]
+        },
+        {
+            "tag": "Rash",
+            "patterns": [
+                "How do you treat Rashes?",
+                "what to do if i get a Rash?",
+                "Which medicine to take if I have a Rash?",
+                "How to cure Rash?"
+            ],
+            "responses": [
+                "1)Olive oil helps in healing and promotes skin renewal given it is packed with vitamin E and antioxidants. It also soothes the skin and reduces itching. 2)Baking soda is useful in drying skin rashes as also in relieving itching and inflammation. 3)Aloe Vera,Thanks to its antibacterial, antifungal, anti-inflammatory and emollient properties, aloe vera is excellent for treating a number of skin ailments including rashes as also soothing the skin."
+            ]
+        },
+        {
+            "tag": "snake bite",
+            "patterns": [
+                "How do you treat a snake bite?",
+                "what to do if i get a snake bite?",
+                "Which medicine to take if I get a snake bite?",
+                "How to cure snake bite?",
+                "i got bit by a snake"
+            ],
+            "responses": [
+                "While waiting for medical help: 1)Move the person beyond striking distance of the snake. 2)Have the person lie down with wound below the heart. 3)Keep the person calm and at rest, remaining as still as possible to keep venom from spreading. 4)Cover the wound with loose, sterile bandage. 5)Remove any jewelry from the area that was bitten. 6)Remove shoes if the leg or foot was bitten."
+            ]
+        },
+        {
+            "tag": "animal bite",
+            "patterns": [
+                "How do you treat a animal bite?",
+                "How do you treat a monkey bite?",
+                "How do you treat a dog bite?",
+                "what to do if i get a animal bite?",
+                "Which medicine to take if I get a monekey bite?",
+                "How to cure dog bite?",
+                "i got bit by a dog"
+            ],
+            "responses": [
+                "1)Wash the wound with soap and warm water. 2)Gently press a clean cloth over the wound to stop the flow of blood. 3)Apply an antibacterial ointment to the wound. 4)Cover with a sterile bandage. 5)Watch for signs of infection. 6)Seek help if you suspect infection or possible exposure to rabies, or if the wound is severe."
+            ]
+        },
+        {
+            "tag": "Drowning",
+            "patterns": [
+                "What to do if someone is Drowning?",
+                "what to do if someone drowned?",
+                "What steps to take if i see a drowning person?",
+                "How to help a drowning person?"
+            ],
+            "responses": [
+                "1)Place your ear next to the person's mouth and nose. Do you feel air on your cheek? 2)Look to see if the person's chest is moving.If the Person is Not Breathing, Check Pulse. 3)Check the person's pulse for 10 seconds.If There is No Pulse, Start CPR."
+            ]
+        },
+        {
+            "tag": "CPR",
+            "patterns": [
+                "How to give CPR??",
+                "what to do in a CPR?",
+                "What steps to take in a CPR??",
+                "How to help a drowning person in CPR?"
+            ],
+            "responses": [
+                "1)For an adult or child, place the heel of one hand on the center of the chest at the nipple line. You can also push with one hand on top of the other. For an infant, place two fingers on the breastbone. 2)For an adult or child, press down at least 2 inches. Make sure not to press on ribs. For an infant, press down about 1 and 1/2 inches. Make sure not to press on the end of the breastbone. 3)Do chest compressions only, at the rate of 100-120 per minute or more. Let the chest rise completely between pushes. 4)Check to see if the person has started breathing."
+            ]
+        },
+        {
+            "tag": "Fracture",
+            "patterns": [
+                "How do you treat a Fracture?",
+                "what to do if i get a Fracture?",
+                "Which medicine to take if I have a Fracture?",
+                "How to cure a Fracture?"
+            ],
+            "responses": [
+                "1)Stop any bleeding. Apply pressure to the wound with a sterile bandage, a clean cloth or a clean piece of clothing. 2)Immobilize the injured area. Don't try to realign the bone or push a bone that's sticking out back in. If you've been trained in how to splint and professional help isn't readily available, apply a splint to the area above and below the fracture sites. Padding the splints can help reduce discomfort. 3)Apply ice packs to limit swelling and help relieve pain. Don't apply ice directly to the skin. Wrap the ice in a towel, piece of cloth or some other material. 4)Treat for shock. If the person feels faint or is breathing in short, rapid breaths, lay the person down with the head slightly lower than the trunk and, if possible, elevate the legs."
+            ]
+        },
+        {
+            "intent": "fever prevention",
+            "text": [
+                "What medicines can I buy to help me with my fever?",
+                "tell me some prevention method from fever",
+                "What should I eat or drink if i am suffering from fever?",
+                "How can I keep from getting a fever?"
+            ],
+            "responses": [
+                "medicines you can consume : acetaminophen ,ibuprofen,aspirin,Crocin Cold & Flu Max, prevention that you must follow :Wash your hands,Cover your mouth when you cough and your nose when you sneeze,Clean frequently used surfaces,Avoid sharing cups, glasses, and eating utensils with other people.,SUGGESTED FOODS ARE:Garlic,Vitamin C–containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"
+            ]
+        },
+        {
+            "intent": "common cold prevention",
+            "text": [
+                "What medicines can I buy to help me with my common cold?",
+                "tell me some prevention method from common cold",
+                "What should I eat or drink if i am suffering from common cold?",
+                "How can I keep from getting a cold or the flu?"
+            ],
+            "responses": [
+                "medicines you can consume : Dextromethorphan,Decongestant,Diphenhydramine,Crocin Cold & Flu Max, preventions that you must follow :Wash your hands,Avoid touching your face,Clean frequently used surfaces,Use hand sanitizers,SUGGESTED FOODS ARE:Garlic,Vitamin C–containing fruits,Leafy greens,Broccoli,Oatmeal,Spices,Chicken Soup"
+            ]
+        },
+        {
+            "intent": "diabetes prevention",
+            "text": [
+                "What medicines can I buy to help me with my diabetes?",
+                "tell me some prevention method from diabetes",
+                "What should I eat or drink if i am suffering from diabetes?",
+                "How can I keep from getting diabetes?"
+            ],
+            "responses": [
+                "medicines you can consume : Insulin ,Amylinomimetic drug,Dipeptidyl peptidase-4 (DPP-4) inhibitor, prevention that you must follow :Cut Sugar and Refined Carbs From Your Diet,Work Out Regularly,Drink Water as Your Primary Beverage,Lose Weight If You’re Overweight or Obese,Quit Smoking, Follow a Very-Low-Carb Diet,Watch Portion Sizes,SUGGESTED FOODS ARE:Leafy greens,Avocados,Eggs"
+            ]
+        },
+        {
+            "intent": "depression prevention",
+            "text": [
+                "What medicines can I buy to help me with my depression?",
+                "tell me some prevention method from depression",
+                "What should I eat or drink if i am suffering from depression?",
+                "How can I keep from getting depression?"
+            ],
+            "responses": [
+                "medicines you can consume :  brexpiprazole, quetiapine,olanzapine, prevention that you must follow :Exercise regularly,Cut back on social media time,Drink Water as Your Primary Beverage,Build strong relationships,Minimize your daily choices, Follow a Very-Low-Carb Diet,SUGGESTED FOODS ARE:Get Enough Vitamin D,Include Omega-3 Fatty Acids,Beans and legumes"
+            ]
+        },
+        {
+            "intent": "asthma prevention",
+            "text": [
+                "What medicines can I buy to help me with my asthma?",
+                "tell me some prevention method from asthma",
+                "What should I eat or drink if i am suffering from asthma?",
+                "How can I keep from getting asthma?"
+            ],
+            "responses": [
+                "medicines you can consume : epinephrine,anticholinergic,Proair HFA, prevention that you must follow : Identify Asthma Triggers, Stay Away From Allergens,Avoid Smoke of Any Type,SUGGESTED FOODS ARE:carrots,juice,eggs,broccoli,cantaloupe,milk"
+            ]
+        },
+        {
+            "intent": "Consultation",
+            "text": [
+                "who should i contact for consultation?",
+                "is there any doctor available?",
+                "can you give me some suggestions for doctor consultations?",
+                "can you set up a meeting with a doctor for consultation?",
+                "is there any doctor available for consultation"
+            ],
+            "responses": [
+                "You can contact various doctors here for any kind of consultation: 1. https://www.1mg.com/online-doctor-consultation, 2. https://www.tatahealth.com/online-doctor-consultation/general-physician, 3. https://www.doconline.com/,."
+            ]
+        },
+        {
+            "intent": "exercise_recommendation",
+            "text": [
+                "Best exercises for weight loss",
+                "Exercises to improve flexibility",
+                "Strength training routines",
+                "Cardio workouts"
+            ],
+            "responses": [
+                "For weight loss, combine cardio exercises like jogging and cycling with strength training. Yoga and Pilates improve flexibility. Strength training exercises include squats, lunges, and push-ups. Cardio workouts like running and swimming boost heart health."
+            ]
+        },
+        {
+            "intent": "nutrition_advice",
+            "text": [
+                "Healthy snacks ideas",
+                "Low-calorie meal recipes",
+                "Vegan diet tips",
+                "Gluten-free eating"
+            ],
+            "responses": [
+                "Healthy snacks include fruits, nuts, and yogurt. Try grilled vegetables, salads, and lean proteins for low-calorie meals. A balanced vegan diet includes beans, tofu, and plenty of vegetables. Gluten-free options include quinoa, rice, and gluten-free oats."
+            ]
+        },
+        {
+            "intent": "sleep_health",
+            "text": [
+                "How to improve sleep quality",
+                "Dealing with insomnia",
+                "Ideal sleep duration",
+                "Creating a bedtime routine"
+            ],
+            "responses": [
+                "Improve sleep quality by keeping a consistent sleep schedule and creating a relaxing bedtime routine. Limit screen time before sleep. If you have insomnia, consult a healthcare provider. Adults generally need 7-9 hours of sleep per night for optimal health."
+            ]
+        },
+        {
+            "intent": "holistic_health",
+            "text": [
+                "Benefits of meditation",
+                "Practicing mindfulness",
+                "Natural remedies for common ailments",
+                "Holistic wellness practices"
+            ],
+            "responses": [
+                "Meditation reduces stress, improves focus, and promotes emotional well-being. Mindfulness involves being present in the moment, reducing anxiety. Natural remedies like herbal teas and essential oils can alleviate minor ailments. Holistic practices include acupuncture, chiropractic care, and massage therapy."
+            ]
+        },
+        {
+            "intent": "travel_health",
+            "text": [
+                "Travel vaccinations",
+                "Jet lag remedies",
+                "Staying healthy while traveling",
+                "Travel insurance advice"
+            ],
+            "responses": [
+                "Check travel vaccinations needed for your destination. To prevent jet lag, adjust your sleep schedule before departure. Stay hydrated, wash hands frequently, and eat balanced meals while traveling. Consider travel insurance to cover unexpected medical expenses abroad."
+            ]
+        },
+        {
+            "intent": "appointment",
+            "text": [
+                "How can I book an appointment?",
+                "Schedule a doctor's appointment",
+                "Availability of doctors",
+                "Book a consultation"
+            ],
+            "responses": [
+                "You can book a doctor's appointment online through various platforms like Practo (https://www.practo.com/), Zocdoc (https://www.zocdoc.com/), or through the official website of your local healthcare provider."
+            ]
+        },
+        {
+            "intent": "diet_nutrition",
+            "text": [
+                "What's a balanced diet?",
+                "Healthy eating tips",
+                "Nutrition advice",
+                "Diet for [specific condition]"
+            ],
+            "responses": [
+                "A balanced diet includes a variety of foods such as fruits, vegetables, whole grains, lean proteins, and healthy fats. For personalized nutrition advice, it's best to consult a registered dietitian."
+            ]
+        },
+        {
+            "intent": "exercise",
+            "text": [
+                "Best exercises for [specific condition]",
+                "How often should I exercise?",
+                "Exercise routines",
+                "Fitness tips"
+            ],
+            "responses": [
+                "Regular physical activity is important for overall health. The best exercises depend on your fitness level and health condition. It's advisable to consult a fitness expert or a healthcare provider for personalized exercise recommendations."
+            ]
+        },
+        {
+            "intent": "exercise_injuries",
+            "text": [
+                "Preventing exercise-related injuries",
+                "Treating muscle strains",
+                "Dealing with joint pain",
+                "Recovering from sports injuries"
+            ],
+            "responses": [
+                "Warm-up before exercising and cool down afterward to prevent injuries. Rest, ice, compression, and elevation (RICE) can help treat muscle strains. Joint pain may require rest and pain relief. Consult a healthcare professional for proper diagnosis and rehabilitation after sports injuries."
+            ]
+        },
+        {
+            "intent": "weight_management",
+            "text": [
+                "Healthy weight loss strategies",
+                "Maintaining a healthy weight",
+                "Understanding body mass index (BMI)",
+                "Weight gain causes and prevention"
+            ],
+            "responses": [
+                "Healthy weight loss involves a balanced diet and regular exercise. Maintain a healthy weight by adopting a sustainable lifestyle. BMI measures body fat based on height and weight. Avoiding processed foods, sugary drinks, and staying active can prevent weight gain."
+            ]
+        },
+        {
+            "intent": "digital_health",
+            "text": [
+                "Using health apps",
+                "Benefits of wearable devices",
+                "Virtual doctor visits",
+                "Online fitness programs"
+            ],
+            "responses": [
+                "Health apps can track fitness, nutrition, and mental health. Wearable devices monitor activity, heart rate, and sleep text. Virtual doctor visits offer convenient consultations. Online fitness programs provide guided workouts and nutrition plans."
+            ]
+        },
+        {
+            "intent": "menstrual_health",
+            "text": [
+                "Managing menstrual cramps",
+                "Healthy menstrual hygiene practices",
+                "Irregular menstrual cycles",
+                "PMS symptoms and remedies"
+            ],
+            "responses": [
+                "Menstrual cramps can be relieved with hot water bottles and relaxation techniques. Maintain good menstrual hygiene by changing pads or tampons regularly. Irregular menstrual cycles may be due to hormonal imbalances. PMS symptoms can be managed with a balanced diet and stress reduction."
+            ]
+        },
+        {
+            "intent": "ask_advice",
+            "text": [
+                "Can you give me some advice on how to deal with [disease]?",
+                "I'm looking for information about [disease]. Can you help me?",
+                "I have [disease]. What should I do?",
+                "My child has [disease]. What should I do?",
+                "I've had [disease] for a while. Should I see a doctor?",
+                "I'm worried about my [disease]. Can you reassure me a bit?",
+                "I've tried many things to treat [disease] but nothing works. Any suggestions?",
+                "I'd like to learn more about different treatment options for [disease]",
+                "I don't think [disease] is a serious issue. Are you exaggerating?",
+                "I don't want to hear any more about [disease]. Please change the subject.",
+                "I'm not sure if I have [disease]. Can you help me figure it out?",
+                "Can you tell me more about the potential complications of [disease]?",
+                "Any recommendations about [disease]?"
+            ],
+            "responses": [
+                "Sure, I'd be happy to offer some advice",
+                "Of course! What advice are you looking for?",
+                "I'm here to help. What do you need advice on?",
+                "Sure, I can help with that. What's your question?",
+                "What kind of advice do you need?",
+                "Feel free to ask your question. I'm here to help.",
+                "I'm happy to offer advice. What do you need?",
+                "Let me know how I can assist you with advice.",
+                "I'd be glad to help. What advice do you need?",
+                "I'm here to give you advice. What do you need help with?"
+            ]
+        },
+        {
+            "intent": "ask_disease_info",
+            "text": [
+                "What is [disease]?",
+                "Tell me about [disease].",
+                "Can you provide information on [disease]?",
+                "I'd like to learn more about [disease].",
+                "Give me an overview of [disease].",
+                "I want to know about [disease].",
+                "I need some information about [disease].",
+                "Can you explain [disease] to me?",
+                "Inform me about [disease].",
+                "Can you provide details on [disease]?",
+                "I'd like to know about [disease].",
+                "I'm seeking an understanding of how [disease] works.",
+                "Provide me with insights into [disease].",
+                "Could you provide some information on [disease]?",
+                "Can you give me information on [disease]?"
+            ],
+            "responses": [
+                "I can provide information about various diseases. Which disease are you interested in?",
+                "Sure, I can help with that. Which disease do you want to know about?",
+                "I'd be happy to provide information. Which disease are you curious about?",
+                "Tell me which disease you need information on.",
+                "I can help with disease information. What are you interested in?",
+                "Which disease do you want to learn more about?",
+                "Feel free to ask about any disease. I'm here to help.",
+                "I can provide details on many diseases. Which one?",
+                "Ask me about any disease, and I'll give you information.",
+                "What disease information are you looking for?"
+            ]
+        },
+        {
+            "intent": "ask_symptoms",
+            "text": [
+                "What are the symptoms of [disease]?",
+                "Can you tell me the signs of [disease]?",
+                "What are the early warning signs of [disease]?",
+                "I'm concerned about [disease]. What should I watch out for?",
+                "How do I know if I have [disease]?",
+                "What are the symptoms of [disease]?",
+                "Can you give me the symptoms of [disease]?",
+                "What are the early symptoms of [disease]?",
+                "What are common symptoms of [disease]?"
+            ],
+            "responses": [
+                "Please tell me more about your symptoms so I can assist you better.",
+                "Can you describe your symptoms in more detail?",
+                "I need more information about your symptoms to help.",
+                "What symptoms are you experiencing?",
+                "Tell me more about your symptoms.",
+                "Describe your symptoms for me.",
+                "What are the symptoms you're dealing with?",
+                "Please provide more details about your symptoms.",
+                "What symptoms do you have?",
+                "Can you tell me about your symptoms?"
+            ]
+        },
+        {
+            "intent": "feeling_sick",
+            "text": [
+                "Feeling like I'm going to faint",
+                "I'm feeling like I'm going to puke",
+                "Feeling like I'm going to hurl",
+                "I'm feeling like I'm going to barf",
+                "Feeling like I'm going to vomit",
+                "I'm feeling like I'm going to be sick",
+                "Feeling like I'm going to throw up",
+                "I'm feeling like I'm going to lose my lunch",
+                "Feeling like I'm going to lose my breakfast",
+                "I'm feeling like I'm going to lose my dinner",
+                "Feeling like I'm going to lose my meal",
+                "I'm feeling like I'm going to lose my supper",
+                "Feeling like I'm going to toss my cookies",
+                "I'm feeling like I'm going to toss my lunch",
+                "Feeling like I'm going to toss my dinner",
+                "I'm feeling like I'm going to toss my supper",
+                "Feeling like I'm going to blow chunks",
+                "I'm feeling like I'm going to blow lunch",
+                "Feeling like I'm going to blow dinner",
+                "I'm feeling like I'm going to blow supper",
+                "Feeling like I'm going to blow my lunch",
+                "I'm feeling like I'm going to blow my dinner",
+                "Feeling like I'm going to blow my supper",
+                "I'm feeling like I'm going to spew",
+                "Feeling like I'm going to hurl chunks",
+                "I'm feeling like I'm going to puke my guts out",
+                "Feeling like I'm going to vomit my guts out",
+                "I'm feeling like I'm going to barf my guts out",
+                "Feeling like I'm going to toss my cookies up",
+                "I'm feeling like I'm going to toss my lunch up",
+                "Feeling like I'm going to toss my dinner up",
+                "I'm feeling like I'm going to toss my supper up",
+                "Feeling like I'm going to blow chunks up",
+                "I'm feeling like I'm going to blow lunch up",
+                "Feeling like I'm going to blow dinner up",
+                "I'm feeling like I'm going to blow supper up",
+                "Feeling like I'm going to blow my lunch up",
+                "I am sick",
+                "I am not feeling well",
+                "I do not feel well",
+                "I am not well",
+                "Feeling under the weather",
+                "I think I'm coming down with something",
+                "I'm feeling terrible",
+                "I'm feeling awful",
+                "Not feeling too good today",
+                "Feeling a bit off",
+                "I'm feeling quite ill",
+                "Feeling a little queasy",
+                "I'm feeling really sick",
+                "Feeling nauseous",
+                "I'm feeling really unwell",
+                "Feeling feverish",
+                "I'm feeling dizzy",
+                "I'm feeling weak",
+                "Feeling exhausted",
+                "I'm feeling fatigued",
+                "I'm feeling rundown",
+                "I feel like I'm coming down with something",
+                "I'm feeling feverish",
+                "I'm feeling shivery",
+                "I'm feeling chilly",
+                "Feeling hot and cold",
+                "I'm feeling achy",
+                "I'm feeling sore all over",
+                "I'm feeling congested",
+                "Feeling stuffed up",
+                "I'm feeling congested",
+                "I'm feeling nauseated",
+                "I'm feeling queasy",
+                "Feeling like I might throw up",
+                "I'm feeling light-headed",
+                "I'm feeling woozy",
+                "Feeling faint",
+                "I'm feeling nauseous",
+                "I'm feeling dizzy",
+                "I'm feeling weak"
+            ],
+            "responses": [
+                "I'm sorry to hear that you're feeling unwell. It's important to take care of yourself and rest. If your symptoms persist or worsen, please consult a healthcare professional for further evaluation and treatment.",
+                "I'm sorry to hear that you're feeling sick. Can you describe your symptoms?",
+                "That's unfortunate. What symptoms are you experiencing?",
+                "I hope you feel better soon. What are your symptoms?",
+                "Can you tell me more about how you're feeling?",
+                "I'm here to help. What symptoms do you have?",
+                "Tell me more about your illness so I can assist.",
+                "I'm sorry to hear that. What symptoms are you dealing with?",
+                "Please describe your symptoms for me.",
+                "What symptoms are you experiencing today?",
+                "Can you tell me about your symptoms?"
+            ]
+        },
+        {
+            "intent": "list_symptoms",
+            "text": [
+                "I've been feeling [symptoms] lately",
+                "I'm experiencing [symptoms]",
+                "I'm not sure what's causing my [symptoms]",
+                "I've been having [symptoms] for a while now.",
+                "I'm concerned about my [symptoms].",
+                "I have a [symptoms].",
+                "I'm worried about my [symptoms].",
+                "I feel like I have [symptoms].",
+                "I feel [symptoms].",
+                "I'm sweating profusely and feeling cold"
+            ],
+            "responses": []
+        },
+        {
+            "intent": "introduce_myself",
+            "text": [
+                "I am [name]",
+                "My name is [name]",
+                "I'm [name]",
+                "I'm [name], nice to meet you",
+                "I'm [name], how can I help you?",
+                "Hello, I'm [name]",
+                "Hi, I'm [name]",
+                "Hey, I'm [name]",
+                "Hello, my name is [name]",
+                "Hi, my name is [name]",
+                "Hey, my name is [name]"
+            ],
+            "responses": [
+                "Hello, [name]! I'm a virtual assistant here to help you with any health-related questions or concerns. How can I assist you today?"
+            ]
+        }
+    ]
+}
