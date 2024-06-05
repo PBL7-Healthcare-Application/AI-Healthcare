@@ -5,6 +5,17 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import classification_report, accuracy_score
 import joblib
 import os
+import json
+import random
+import nltk
+import numpy as np
+import pickle
+from keras.models import load_model
+from nltk.stem import WordNetLemmatizer
+lemmatizer = WordNetLemmatizer()
+nltk.download('punkt')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 # Đường dẫn đến các tệp dữ liệu
 # file_paths = [pd.read_csv("E:\Code_Project\PBL7\AI-Healthcare\\app\Intent\Ask_Advice.csv"), pd.read_csv("E:\Code_Project\PBL7\AI-Healthcare\\app\Intent\Ask_disease_info.csv"), pd.read_csv("E:\Code_Project\PBL7\AI-Healthcare\\app\Intent\Ask_symptoms.csv"),pd.read_csv("E:\Code_Project\PBL7\AI-Healthcare\\app\Intent\FareWell.csv"),pd.read_csv("E:\Code_Project\PBL7\AI-Healthcare\\app\Intent\Feeling_sick.csv"),pd.read_csv("E:\Code_Project\PBL7\AI-Healthcare\\app\Intent\Greeting.csv"),pd.read_csv("E:\Code_Project\PBL7\AI-Healthcare\\app\Intent\Listing_Symptoms.csv")]  # Thay đổi thành các đường dẫn thực tế của bạn
 
@@ -49,16 +60,122 @@ import os
 
 
 # Hàm dự đoán ý định
-def predict_intent(text):
-    model_path = os.path.join("app/model", 'model.pkl')
+def predict_intent(pattern):
+    
+    model_path = os.path.join("app/model", 'intent_prediction_model.pkl')
     vectorizer_path = os.path.join("app/model", 'vectorizer.pkl')
-    # model_path = 'E:\Code_Project\PBL7\AI-Healthcare\\app\model\model.pkl'
-    # vectorizer_path = 'E:\Code_Project\PBL7\AI-Healthcare\\app\model\\vectorizer.pkl'
+    loaded_model = joblib.load(model_path)
+    loaded_vectorizer = joblib.load(vectorizer_path)
+    
+    # Vectorize the input pattern
+    pattern_vec = loaded_vectorizer.transform([pattern])
+    
+    # Predict the intent
+    intent = loaded_model.predict(pattern_vec)
+    if intent is not None:
+        return intent[0]
+    else:
+        return None
 
-# Tải mô hình và vectorizer
-    clf = joblib.load(model_path)
-    vectorizer = joblib.load(vectorizer_path)
-    text_vector = vectorizer.transform([text])
-    intent = clf.predict(text_vector)[0]
-    return intent
+def generate_response(tag):
+    print('tag: ', tag)
+    with open(os.path.join("app/Intent", 'Intent.json')) as file:
+        intents_json = json.load(file)
+    list_of_intents = intents_json['intents']
+    for i in list_of_intents:
+        if i['tag'] == tag:
+            result = random.choice(i['responses'])
+            break
+    return result
+
+# ============================
+def bow(sentence, words, show_details=True):
+  sentence_words = clean_up_sentence(sentence)
+#print(sentence_words)
+
+# bag of words - matrix of N words, vocabulary matrix
+
+  bag = [0]*len(words) 
+  #print(bag)
+
+  for s in sentence_words:  
+      for i,w in enumerate(words):
+          if w == s: 
+              # assign 1 if current word is in the vocabulary position
+              bag[i] = 1
+              if show_details:
+                  print ("found in bag: %s" % w)
+              #print ("found in bag: %s" % w)
+  #print(bag)
+  return(np.array(bag))
+def clean_up_sentence(sentence):
+  sentence_words = nltk.word_tokenize(sentence)
+#print(sentence_words)
+# stem each word - create short form for word
+
+  sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
+#print(sentence_words)
+
+  return sentence_words
+
+def bow(sentence, words, show_details=True):
+  sentence_words = clean_up_sentence(sentence)
+#print(sentence_words)
+
+# bag of words - matrix of N words, vocabulary matrix
+
+  bag = [0]*len(words) 
+  #print(bag)
+
+  for s in sentence_words:  
+      for i,w in enumerate(words):
+          if w == s: 
+              # assign 1 if current word is in the vocabulary position
+              bag[i] = 1
+              if show_details:
+                  print ("found in bag: %s" % w)
+              #print ("found in bag: %s" % w)
+  #print(bag)
+  return(np.array(bag))
+
+def predict_class(sentence):
+  model = load_model(os.path.join("app/model", 'chatbot_model.h5'));
+  words = pickle.load(open(os.path.join("app/model", 'words.pkl'),'rb'))
+
+  classes = pickle.load(open(os.path.join("app/model", 'classes.pkl'),'rb'))
+  p = bow(sentence, words,show_details=False)
+#print(p)
+
+  res = model.predict(np.array([p]))[0]
+  #print(res)
+
+  ERROR_THRESHOLD = 0.25
+  results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
+  results.sort(key=lambda x: x[1], reverse=True)
+  #print(results)
+
+  return_list = []
+
+  for r in results:
+      return_list.append(classes[r[0]])
+  if len(return_list) > 0:
+      return return_list
+  else:
+      return None   
+
+def getResponse(ints):
+  intentShort = os.path.join("app/Data", 'intents_short.json')
+  with open(intentShort, 'r') as f:
+        intents_json = json.load(f)
+  tag = ints[0]['intent']
+#print(tag)
+
+  list_of_intents = intents_json['intents']
+  #print(list_of_intents)
+
+  for i in list_of_intents:
+      if(i['tag']== tag):
+          result = random.choice(i['responses'])
+          break
+  return result
 

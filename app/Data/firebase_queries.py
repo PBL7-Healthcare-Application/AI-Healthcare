@@ -1,9 +1,11 @@
 import firebase_admin
 from firebase_admin import credentials, firestore
 from datetime import datetime
+import os
 
 # Đường dẫn đến tệp JSON bạn đã tải xuống
-cred = credentials.Certificate('F:/PBL7/ai-healthcare-chatwithchatbot-firebase-adminsdk-35y92-a20f1ae30c.json')
+
+cred = credentials.Certificate(os.path.join("app/Data", 'ai-healthcare-chatwithchatbot-firebase-adminsdk-35y92-a20f1ae30c.json'))
 
 # Khởi tạo ứng dụng Firebase
 firebase_admin.initialize_app(cred)
