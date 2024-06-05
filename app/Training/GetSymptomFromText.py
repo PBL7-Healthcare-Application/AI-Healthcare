@@ -10,8 +10,11 @@ nltk.download('stopwords')
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
+import os
 
-with open('F:\PBL7\AI-Healthcare\\app\Data\intents_short.json', 'r') as f:
+
+intentShort = os.path.join("app/Data", 'intents_short.json')
+with open(intentShort, 'r') as f:
     intents = json.load(f)
 
 lemmatizer = WordNetLemmatizer()
@@ -68,7 +71,7 @@ def predictSym(sym,vocab,app_tag):
                     possym.append(app_tag[i])
     return correctsym, possym
 
-df_tr=pd.read_csv('F:\PBL7\AI-Healthcare\\app\Data\Training.csv')
+df_tr=pd.read_csv(os.path.join("app/Data", 'Training.csv'))
 
 def OHV(cl_sym, all_sym):
     l = np.zeros([1, len(all_sym)])

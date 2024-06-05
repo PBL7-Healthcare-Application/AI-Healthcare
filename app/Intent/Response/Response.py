@@ -86,8 +86,8 @@ responses = {
     ]
 }
 
-def get_response(intent):
-     if intent in responses:
-        return random.choice(responses[intent])
-     else:
-        return "I'm sorry, I didn't understand that. Can you please rephrase?"
+# def get_response(intent):
+#      if intent in responses:
+#         return random.choice(responses[intent])
+#      else:
+#         return "I'm sorry, I didn't understand that. Can you please rephrase?"
