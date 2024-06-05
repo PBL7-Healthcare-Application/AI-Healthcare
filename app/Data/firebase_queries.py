@@ -52,3 +52,26 @@ def add_symptom(correctsym, psym):
 
     doc_ref = db.collection('symptom').add(data_pushFirebase)
     return doc_ref
+
+def save_message(idDocument, message, isUserSender):
+    user_ref = db.collection('chatbot').document(idDocument)
+    user = user_ref.get()
+
+    message_obj = {
+        'text': message,
+        'isUserSender': isUserSender,
+        'createdAt': datetime.now().isoformat()
+    }
+
+    if user.exists:
+        # User already exists, append the new message
+        user_ref.update({
+            'messages': firestore.ArrayUnion([message_obj])
+        })
+    # else:
+    #     # User does not exist, create a new document
+    #     user_ref.set({
+    #         'idUser': idUser,
+    #         'createdAt': datetime.now().isoformat(),
+    #         'messages': [message_obj]
+    #     })
