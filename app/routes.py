@@ -10,7 +10,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 from .Training.Predict_Disease import predict_disease_from_symptom
-from .Data.firebase_queries import update_symptom, get_symptom, add_symptom
+from .Data.firebase_queries import update_symptom, get_symptom, add_symptom, save_message
 main = Blueprint('main', __name__)
 
 
@@ -19,6 +19,7 @@ def predict():
    
     data = request.json
     entent = data['message']
+    save_message(data['idChat'], entent, True)
     _idDocument = data['idDocument']
     _nameSymptom = data['nameSymptom']
     
@@ -48,6 +49,7 @@ def predict():
                         nameSymptom = symptom['nameSymptom'].replace('_',' ')
                         
                         res = 'Do you experience '+ nameSymptom + ' ?'
+                        save_message(data['idChat'], res, False)
                         response = {
                         'response': res,
                         'idDocument': _idDocument,
@@ -71,6 +73,7 @@ def predict():
             print('list symptoms: ', list_symptoms)
             predict_disease = predict_disease_from_symptom(list_symptoms)
             res = 'Based on the information you provided, we think you have a disease: ' + predict_disease
+            save_message(data['idChat'], res, False)
             response = {
             'response': res,
             'idDocument': None,
@@ -95,7 +98,7 @@ def predict():
             nameSymptom = first_symp_ask.replace('_',' ')
 
             res = 'Based on the signs you provided, I want to ask you a few things to confirm the information. \nDo you experience ' + nameSymptom + ' ?'
-            
+            save_message(data['idChat'], res, False)
             # doc_ref là một tuple chứa reference đến document vừa được tạo
             print(f'Tài liệu mới được tạo với ID: {doc_ref[1].id}')
             
@@ -110,6 +113,7 @@ def predict():
         #Nếu intent không phải là listing_symptoms thì sẽ gọi hàm get_response để lấy câu trả lời tương ứng 
         else:
             res = get_response(result)
+            save_message(data['idChat'], res, False)
 
             response = {
                 'entent': result,
