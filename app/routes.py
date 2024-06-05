@@ -1,6 +1,5 @@
 from flask import Blueprint, jsonify, request
-from .Training.TraininggIntent import predict_intent
-from .Intent.Response.Response import get_response 
+from .Training.TraininggIntent import generate_response, predict_class
 from .Training.Predict_Disease import contains_disease_info ,find_disease_description ,find_disease_advice,find_symptoms_from_disease
 from .Training.GetSymptomFromText import get_symptoms
 import pickle
@@ -57,7 +56,7 @@ def predict():
                         }
                         return jsonify(response)
             #Done get symptoms
-            res = get_response('listing_symptoms')
+            res = generate_response('listing_symptoms')
 
             #Get list symptoms from Firebase to start predict desease
             list_symptoms = []
@@ -83,79 +82,100 @@ def predict():
 
     #Nếu truyền 2 giá trị null _idDocument và _nameSymptom, system predict intent của câu  
     else:
-        result = predict_intent(entent)
+        result = predict_class(entent)[0]
+        if result is not None:
+            if result == 'list_symptoms':
+                correctsym, psym = get_symptoms(entent)
+                if len(psym)>0:
+                    first_symp_ask = psym[0]
+                    print('first_symp_ask: ', first_symp_ask)
 
-        #Nếu intent là listing_symptoms thì sẽ gọi hàm get_symptoms để lấy các triệu chứng từ câu
-        if result == 'listing_symptoms':
-            correctsym, psym = get_symptoms(entent)
-            if len(psym)>0:
-                first_symp_ask = psym[0]
-                print('first_symp_ask: ', first_symp_ask)
+                if len(psym)>0 or len(correctsym)>0:
+                    doc_ref = add_symptom(correctsym, psym)
 
-            if len(psym)>0 or len(correctsym)>0:
-                doc_ref = add_symptom(correctsym, psym)
+                nameSymptom = first_symp_ask.replace('_',' ')
 
-            nameSymptom = first_symp_ask.replace('_',' ')
+                nameSymptom = first_symp_ask.replace('_',' ')
 
-            res = 'Based on the signs you provided, I want to ask you a few things to confirm the information. \nDo you experience ' + nameSymptom + ' ?'
-            save_message(data['idChat'], res, False)
-            # doc_ref là một tuple chứa reference đến document vừa được tạo
-            print(f'Tài liệu mới được tạo với ID: {doc_ref[1].id}')
+                res = 'Based on the signs you provided, I want to ask you a few things to confirm the information. \nDo you experience ' + nameSymptom + ' ?'
+                save_message(data['idChat'], res, False)
+                # doc_ref là một tuple chứa reference đến document vừa được tạo
+                print(f'Tài liệu mới được tạo với ID: {doc_ref[1].id}')
+                
+                response = {
+                'entent': result,
+                'response': res,
+                'idDocument': doc_ref[1].id,
+                'nameSymptom': nameSymptom
+                }
+                return jsonify(response)
+            if (result == 'ask_disease_info'):
+                    disease = contains_disease_info(entent)
+                    res = ''
+                    if(disease):
+                        res = find_disease_description(disease)
+                    else:
+                        res = generate_response(result)
+                    save_message(data['idChat'], res, False)
+                    response = {
+                        'entent': result,
+                        'response': res,
+                        'idDocument': None,
+                        'nameSymptom': None,
+                    }
+                
+                    return jsonify(response)    
+            if(result == 'ask_advice'):
+                disease = contains_disease_info(entent)
+                if(disease):
+                    res = find_disease_advice(disease)
+                else:
+                    res = generate_response(result)
+                save_message(data['idChat'], res, False)
+                response = {
+                    'entent': result,
+                    'response': res,
+                    'idDocument': None,
+                    'nameSymptom': None,
+                }
             
-            response = {
-            'entent': result,
-            'response': res,
-            'idDocument': doc_ref[1].id,
-            'nameSymptom': nameSymptom
-            }
-            return jsonify(response)
+                return jsonify(response)
+            if(result == 'ask_symptoms'):
+                disease = contains_disease_info(entent)
+                if(disease):
+                    res = find_symptoms_from_disease(disease)
+                else:
+                    res = generate_response(result)
+                save_message(data['idChat'], res, False)
+                response = {
+                    'entent': result,
+                    'response': res,
+                    'idDocument': None,
+                    'nameSymptom': None,
+                }
+            
+                return jsonify(response)
+            else:
+                res = generate_response(result)
+                save_message(data['idChat'], res, False)
+                response = {
+                    'entent': result,
+                    'response': res,
+                    'idDocument': None,
+                    'nameSymptom': None,
+                }
+            
+                return jsonify(response)
         
-        #Nếu intent không phải là listing_symptoms thì sẽ gọi hàm get_response để lấy câu trả lời tương ứng 
         else:
-            res = get_response(result)
+            res = generate_response("fallback")
             save_message(data['idChat'], res, False)
 
             response = {
                 'entent': result,
                 'response': res,
-                'idDocument': None,
-                'nameSymptom': None,
-            }
-        
+                'idDocument': doc_ref[1].id,
+                'nameSymptom': nameSymptom
+                }
             return jsonify(response)
-    # message= data['message']
-    
-    
-    # result = predict_intent(message)
-    # res= ''
-    # if(result == 'greeting'):
-    #     res = get_response(result)
-    # if(result == 'farewell'):
-    #     res = get_response(result)
-    # #=================================================
-    # if(result == 'ask_disease_info'):
-    #     disease = contains_disease_info(message)
-    #     if(disease):
-    #         res = find_disease_description(disease)
-    #     else:
-    #         res = get_response(result)
-    # if(result == 'ask_advice'):
-    #     disease = contains_disease_info(message)
-    #     if(disease):
-    #         res = find_disease_advice(disease)
-    #     else:
-    #         res = get_response(result)
-    # if(result == 'ask_symptoms'):
-    #     disease = contains_disease_info(message)
-    #     if(disease):
-    #         res = find_symptoms_from_disease(disease)
-    #     else:
-    #         res = get_response(result)
-    # if(result == 'feeling_sick'):
-    #     res = get_response(result)
-    # response = {
-    #     'entent': result,
-    #     'response': res,
-    # }
-    
-    # return jsonify(response)
+        
