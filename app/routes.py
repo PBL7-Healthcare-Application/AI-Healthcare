@@ -18,6 +18,7 @@ def predict():
    
     data = request.json
     entent = data['message']
+    print(entent)
     save_message(data['idChat'], entent, True)
     _idDocument = data['idDocument']
     _nameSymptom = data['nameSymptom']
