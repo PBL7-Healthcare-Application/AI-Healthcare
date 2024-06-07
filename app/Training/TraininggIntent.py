@@ -139,29 +139,35 @@ def bow(sentence, words, show_details=True):
   return(np.array(bag))
 
 def predict_class(sentence):
-  model = load_model(os.path.join("app/model", 'chatbot_model.h5'));
-  words = pickle.load(open(os.path.join("app/model", 'words.pkl'),'rb'))
+  try:
+        model = load_model(os.path.join("app/model", 'chatbot_model.h5'))
+        words = pickle.load(open(os.path.join("app/model", 'words.pkl'),'rb'))
 
-  classes = pickle.load(open(os.path.join("app/model", 'classes.pkl'),'rb'))
-  p = bow(sentence, words,show_details=False)
-#print(p)
+        classes = pickle.load(open(os.path.join("app/model", 'classes.pkl'),'rb'))
+        p = bow(sentence, words,show_details=False)
 
-  res = model.predict(np.array([p]))[0]
-  #print(res)
+        res = model.predict(np.array([p]))
+        if res is not None:
+           res = res[0]
+        else:
+            print("Prediction returned None")
+            return None
 
-  ERROR_THRESHOLD = 0.25
-  results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
-  results.sort(key=lambda x: x[1], reverse=True)
-  #print(results)
+        ERROR_THRESHOLD = 0.25
+        results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
+        results.sort(key=lambda x: x[1], reverse=True)
 
-  return_list = []
+        return_list = []
 
-  for r in results:
-      return_list.append(classes[r[0]])
-  if len(return_list) > 0:
-      return return_list
-  else:
-      return None   
+        for r in results:
+            return_list.append(classes[r[0]])
+        if len(return_list) > 0:
+            return return_list
+        else:
+            return None   
+  except Exception as error:
+        print(f"An error occurred: {error}")
+        return None
 
 def getResponse(ints):
   intentShort = os.path.join("app/Data", 'intents_short.json')

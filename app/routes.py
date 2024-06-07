@@ -83,8 +83,10 @@ def predict():
 
     #Nếu truyền 2 giá trị null _idDocument và _nameSymptom, system predict intent của câu  
     else:
-        result = predict_class(entent)[0]
+        result = predict_class(entent)
+        
         if result is not None:
+            result = result[0]
             if result == 'list_symptoms':
                 correctsym, psym = get_symptoms(entent)
                 if len(psym)>0:
