@@ -57,7 +57,7 @@ def predict():
                         }
                         return jsonify(response)
             #Done get symptoms
-            res = generate_response('listing_symptoms')
+            # res = generate_response('listing_symptoms')
 
             #Get list symptoms from Firebase to start predict desease
             list_symptoms = []
