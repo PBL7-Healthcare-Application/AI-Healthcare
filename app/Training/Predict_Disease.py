@@ -133,7 +133,9 @@ def find_symptoms_from_disease(text):
             if text.lower() in row[0].lower():
                 filtered_row = [item for item in row[1:] if item != '']
                 symptoms_list.append([row[0], filtered_row])
-    return random.choice(symptoms_list)[1]
+    symptoms = [s.replace("_", " ") for s in random.choice(symptoms_list)[1]]
+    symptoms_str = ", ".join(symptoms)
+    return symptoms_str
 
 import numpy as np
 

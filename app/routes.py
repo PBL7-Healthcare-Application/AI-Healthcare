@@ -18,6 +18,7 @@ def predict():
    
     data = request.json
     entent = data['message']
+    print(entent)
     save_message(data['idChat'], entent, True)
     _idDocument = data['idDocument']
     _nameSymptom = data['nameSymptom']
@@ -56,7 +57,7 @@ def predict():
                         }
                         return jsonify(response)
             #Done get symptoms
-            res = generate_response('listing_symptoms')
+            # res = generate_response('listing_symptoms')
 
             #Get list symptoms from Firebase to start predict desease
             list_symptoms = []
@@ -82,8 +83,10 @@ def predict():
 
     #Nếu truyền 2 giá trị null _idDocument và _nameSymptom, system predict intent của câu  
     else:
-        result = predict_class(entent)[0]
+        result = predict_class(entent)
+        
         if result is not None:
+            result = result[0]
             if result == 'list_symptoms':
                 correctsym, psym = get_symptoms(entent)
                 if len(psym)>0:
