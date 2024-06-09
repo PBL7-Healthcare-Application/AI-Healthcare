@@ -24,9 +24,6 @@
       "responses": [
         "Hello there! How can I help you today?",
         "Hi there! Welcome to our healthcare chatbot. What can I assist you with?",
-        "Good morning! I'm ready to help you with your healthcare needs.",
-        "Good afternoon! How can I be of service today?",
-        "Good evening! I'm here to assist you with your healthcare inquiries.",
         "I'm doing well, thank you for asking. How can I help you today?",
         "I'm here to help! Please let me know what you need assistance with.",
         "I'm at your service. What can I do for you today?"
@@ -34,27 +31,39 @@
     },
     {
       "tag": "morning",
-      "patterns": ["Good morning"],
+      "patterns": [
+        "Good morning"
+      ],
       "responses": [
         "Good morning. I hope you had a good night's sleep. How are you feeling today? "
       ]
     },
     {
       "tag": "afternoon",
-      "patterns": ["Good afternoon"],
-      "responses": ["Good afternoon. How can I assist you today? "]
+      "patterns": [
+        "Good afternoon"
+      ],
+      "responses": [
+        "Good afternoon. How can I assist you today? "
+      ]
     },
     {
       "tag": "evening",
-      "patterns": ["Good evening"],
+      "patterns": [
+        "Good evening"
+      ],
       "responses": [
         "Good evening. I hope you had a productive day. How can I help you today? "
       ]
     },
     {
       "tag": "night",
-      "patterns": ["Good night"],
-      "responses": ["Good night. Sleep well and take care. "]
+      "patterns": [
+        "Good night"
+      ],
+      "responses": [
+        "Good night. Sleep well and take care. "
+      ]
     },
     {
       "tag": "goodbye",
@@ -142,7 +151,9 @@
         "who made you",
         "who designed you"
       ],
-      "responses": ["Heaton and Allan are the developers of this chatbot"]
+      "responses": [
+        "Heaton and Allan are the developers of this chatbot"
+      ]
     },
     {
       "tag": "about",
@@ -248,7 +259,10 @@
     },
     {
       "tag": "anxious",
-      "patterns": ["I feel so anxious.", "I'm so anxious because of "],
+      "patterns": [
+        "I feel so anxious.",
+        "I'm so anxious because of "
+      ],
       "responses": [
         "Don't be hard on yourself. What's the reason behind this?",
         "Can you tell me more about this feeling?",
@@ -837,7 +851,7 @@
         "Hey, my name is [name]"
       ],
       "responses": [
-        "Hello, [name]! I'm a virtual assistant here to help you with any health-related questions or concerns. How can I assist you today?"
+        "I'm a virtual assistant here to help you with any health-related questions or concerns. How can I assist you today?"
       ]
     }
   ]
