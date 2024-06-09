@@ -9,7 +9,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 from .Training.Predict_Disease import predict_disease_from_symptom
-from .Data.firebase_queries import update_symptom, get_symptom, add_symptom, save_message
+from .Data.firebase_queries import update_symptom, get_symptom, add_symptom, save_message,get_name
 main = Blueprint('main', __name__)
 
 
@@ -157,6 +157,18 @@ def predict():
                     'nameSymptom': None,
                 }
             
+                return jsonify(response)
+            if result == 'introduce_myself':
+                name = get_name(data['idChat'])
+                answer = generate_response("introduce_myself")
+                res = "Hello, " + name + "! " + answer
+                save_message(data['idChat'], res, False)
+                response = {
+                    'entent': result,
+                    'response': res,
+                    'idDocument': None,
+                    'nameSymptom': None,
+                }
                 return jsonify(response)
             else:
                 res = generate_response(result)

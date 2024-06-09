@@ -77,3 +77,10 @@ def save_message(idDocument, message, isUserSender):
     #         'createdAt': datetime.now().isoformat(),
     #         'messages': [message_obj]
     #     })
+
+def get_name(idDocument):
+    getpossymp = db.collection('chatbot').document(idDocument).get()
+    if getpossymp.exists:
+        return getpossymp.to_dict()['name']
+    return None
+
