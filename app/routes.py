@@ -32,6 +32,7 @@ def predict():
             'idDocument': _idDocument,
             'nameSymptom': _nameSymptom
             }
+            save_message(data['idChat'], res, False)
             return jsonify(response)
         else:
             if entent == 'yes':
