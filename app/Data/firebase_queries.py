@@ -5,7 +5,7 @@ import os
 
 # Đường dẫn đến tệp JSON bạn đã tải xuống
 
-cred = credentials.Certificate(os.path.join("app/Data",'ai-healthcare-chatwithchatbot-firebase-adminsdk-35y92-a20f1ae30c.json'))
+cred = credentials.Certificate(os.path.join("app/Data",'ai-healthcare-chatwithchatbot-firebase-adminsdk-35y92-ae65148265.json'))
 
 # Khởi tạo ứng dụng Firebase
 firebase_admin.initialize_app(cred)
