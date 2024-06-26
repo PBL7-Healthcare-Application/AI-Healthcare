@@ -2,10 +2,12 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 from datetime import datetime
 import os
+from pytz import timezone
+import pytz
 
 # Đường dẫn đến tệp JSON bạn đã tải xuống
 
-cred = credentials.Certificate(os.path.join("app/Data",'ai-healthcare-chatwithchatbot-firebase-adminsdk-35y92-a20f1ae30c.json'))
+cred = credentials.Certificate(os.path.join("app/Data",'ai-healthcare-chatwithchatbot-firebase-adminsdk-35y92-e2cd5aba79.json'))
 
 # Khởi tạo ứng dụng Firebase
 firebase_admin.initialize_app(cred)
@@ -38,18 +40,26 @@ def add_symptom(correctsym, psym):
     for symptom in correctsym:
         symptoms.append({
             'nameSymptom': symptom,
-            'isSure': 1
+            'isSure': 1,
+            'i' : 0
         })
+    i = 0
     for symptom in psym:
+        i+=1
         symptoms.append({
             'nameSymptom': symptom,
-            'isSure': 0
+            # 'isSure': 0
+            'isSure': 0,
+            'i' : i
         })
+    # Get the current time in UTC+7
+    utc_plus_7 = pytz.timezone('Asia/Bangkok')
+    current_time = datetime.now(utc_plus_7).isoformat()
 
     data_pushFirebase = {
     'idUser': 'unique_user_id',
     'symptoms': symptoms,
-    'createdAt': datetime.now().isoformat()
+    'createdAt': current_time
     }
 
     doc_ref = db.collection('symptom').add(data_pushFirebase)
@@ -59,10 +69,14 @@ def save_message(idDocument, message, isUserSender):
     user_ref = db.collection('chatbot').document(idDocument)
     user = user_ref.get()
 
+    # Get the current time in UTC+7
+    utc_plus_7 = pytz.timezone('Asia/Bangkok')
+    current_time = datetime.now(utc_plus_7).isoformat()
+
     message_obj = {
         'text': message,
         'isUserSender': isUserSender,
-        'createdAt': datetime.now().isoformat()
+        'createdAt': current_time
     }
 
     if user.exists:

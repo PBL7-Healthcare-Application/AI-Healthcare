@@ -49,7 +49,9 @@ def predict():
                     if symptom['isSure'] == 0:
                         nameSymptom = symptom['nameSymptom'].replace('_',' ')
                         
-                        res = 'Do you experience '+ nameSymptom + ' ?'
+                        # res = 'Do you experience '+ nameSymptom + ' ?'
+                        res = str(symptom['i']) + '. Do you have symptoms of ' + nameSymptom + ' ?'
+
                         save_message(data['idChat'], res, False)
                         response = {
                         'response': res,
@@ -95,14 +97,23 @@ def predict():
                     print('first_symp_ask: ', first_symp_ask)
 
                 if len(psym)>0 or len(correctsym)>0:
+                    print('test1: ')
                     doc_ref = add_symptom(correctsym, psym)
 
                 nameSymptom = first_symp_ask.replace('_',' ')
 
                 nameSymptom = first_symp_ask.replace('_',' ')
 
-                res = 'Based on the signs you provided, I want to ask you a few things to confirm the information. \nDo you experience ' + nameSymptom + ' ?'
-                save_message(data['idChat'], res, False)
+                # res = 'Based on the signs you provided, I want to ask you a few things to confirm the information. \nDo you experience ' + nameSymptom + ' ?'
+                # save_message(data['idChat'], res, False)
+                numberQuestion = str(len(psym))
+                res1 = 'Based on the signs you provided, I want to ask you ' + numberQuestion + ' questions to confirm the information.'
+                res2 = '1. Do you have symptoms of ' + nameSymptom + ' ?'
+                save_message(data['idChat'], res1, False)
+                save_message(data['idChat'], res2, False)
+                
+                res = res1 + '\n' + res2                
+
                 # doc_ref là một tuple chứa reference đến document vừa được tạo
                 print(f'Tài liệu mới được tạo với ID: {doc_ref[1].id}')
                 
