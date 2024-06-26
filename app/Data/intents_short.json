@@ -427,15 +427,6 @@
             ]
         },
         {
-            "tag": "history_of_alcohol_consumption",
-            "patterns": [
-                "history of alcohol consumption",
-                "drink a lot",
-                "drinking for long time",
-                "History drinking"
-            ]
-        },
-        {
             "tag": "increased_appetite",
             "patterns": [
                 "appetite",
@@ -719,15 +710,7 @@
                 "gassy"
             ]
         },
-        {
-            "tag": "patches_in_throat",
-            "patterns": [
-                "patchy throat",
-                "tonsils hurt",
-                "throat hurts",
-                "Patches throat"
-            ]
-        },
+
         {
             "tag": "phlegm",
             "patterns": [

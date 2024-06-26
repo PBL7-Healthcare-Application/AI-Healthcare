@@ -87,43 +87,70 @@ def predict():
     #Nếu truyền 2 giá trị null _idDocument và _nameSymptom, system predict intent của câu  
     else:
         result = predict_class(entent)
+        print('result: ', result)
         
         if result is not None:
             result = result[0]
             if result == 'list_symptoms':
                 correctsym, psym = get_symptoms(entent)
-                if len(psym)>0:
-                    first_symp_ask = psym[0]
-                    print('first_symp_ask: ', first_symp_ask)
+                print('correctsym: ', correctsym)
+                print('psym: ',psym)
 
                 if len(psym)>0 or len(correctsym)>0:
                     print('test1: ')
                     doc_ref = add_symptom(correctsym, psym)
 
-                nameSymptom = first_symp_ask.replace('_',' ')
+                if len(psym)>0:
+                    first_symp_ask = psym[0]
+                    print('first_symp_ask: ', first_symp_ask)
 
-                nameSymptom = first_symp_ask.replace('_',' ')
+                    nameSymptom = first_symp_ask.replace('_',' ')
 
-                # res = 'Based on the signs you provided, I want to ask you a few things to confirm the information. \nDo you experience ' + nameSymptom + ' ?'
-                # save_message(data['idChat'], res, False)
-                numberQuestion = str(len(psym))
-                res1 = 'Based on the signs you provided, I want to ask you ' + numberQuestion + ' questions to confirm the information.'
-                res2 = '1. Do you have symptoms of ' + nameSymptom + ' ?'
-                save_message(data['idChat'], res1, False)
-                save_message(data['idChat'], res2, False)
+                    # res = 'Based on the signs you provided, I want to ask you a few things to confirm the information. \nDo you experience ' + nameSymptom + ' ?'
+                    # save_message(data['idChat'], res, False)
+                    numberQuestion = str(len(psym))
+                    res1 = 'Based on the signs you provided, I want to ask you ' + numberQuestion + ' questions to confirm the information.'
+                    res2 = '1. Do you have symptoms of ' + nameSymptom + ' ?'
+                    save_message(data['idChat'], res1, False)
+                    save_message(data['idChat'], res2, False)
+                    
+                    res = res1 + '\n' + res2                
+
+                    # doc_ref là một tuple chứa reference đến document vừa được tạo
+                    print(f'Tài liệu mới được tạo với ID: {doc_ref[1].id}') 
                 
-                res = res1 + '\n' + res2                
-
-                # doc_ref là một tuple chứa reference đến document vừa được tạo
-                print(f'Tài liệu mới được tạo với ID: {doc_ref[1].id}')
+                    response = {
+                    'entent': result,
+                    'response': res,
+                    'idDocument': doc_ref[1].id,
+                    'nameSymptom': nameSymptom
+                    }
+                    return jsonify(response)
                 
+
+                #ko co trieu chung can confirm
+
+                #Get list symptoms from Firebase to start predict desease
+                list_symptoms = correctsym
+
+                # all_symptoms2 = get_symptom(_idDocument)
+                # if all_symptoms2 is not None:
+                #     for symptom in all_symptoms2:
+                #         if symptom['isSure'] == 1:
+                #             list_symptoms.append(symptom['nameSymptom'])
+
+                #Predict desease
+                print('list symptoms: ', list_symptoms)
+                predict_disease = predict_disease_from_symptom(list_symptoms)
+                res = 'Based on the information you provided, we think you have a disease: ' + predict_disease
+                save_message(data['idChat'], res, False)
                 response = {
-                'entent': result,
                 'response': res,
-                'idDocument': doc_ref[1].id,
-                'nameSymptom': nameSymptom
+                'idDocument': None,
+                'nameSymptom': None
                 }
                 return jsonify(response)
+                
             if (result == 'ask_disease_info'):
                     disease = contains_disease_info(entent)
                     res = ''
@@ -201,8 +228,8 @@ def predict():
             response = {
                 'entent': result,
                 'response': res,
-                'idDocument': doc_ref[1].id,
-                'nameSymptom': nameSymptom
+                'idDocument': None,
+                'nameSymptom': None
                 }
             return jsonify(response)
         
